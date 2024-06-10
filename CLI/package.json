@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "slide:dev": "pnpm -C slides dev",
+    "slide:build": "pnpm -C slides build",
+    "demo1": "demo1",
+    "demo2": "demo2"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@cli/demo1": "workspace:^",
+    "@cli/demo2": "workspace:^"
+  }
+}

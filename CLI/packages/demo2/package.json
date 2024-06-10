@@ -1,0 +1,8 @@
+{
+  "name": "@cli/demo2",
+  "version": "0.0.1",
+  "description": "demo 2",
+  "bin": {
+    "demo2": "index.js"
+  }
+}
