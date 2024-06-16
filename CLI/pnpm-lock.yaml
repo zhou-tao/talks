@@ -23,7 +23,7 @@ importers:
     dependencies:
       '@slidev/cli':
         specifier: ^0.49.9
-        version: 0.49.10(@types/markdown-it@14.1.1)(postcss@8.4.38)
+        version: 0.49.10(@types/markdown-it@14.1.1)(playwright-chromium@1.44.1)(postcss@8.4.38)
       '@slidev/theme-default':
         specifier: latest
         version: 0.25.0
@@ -33,6 +33,16 @@ importers:
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
+    devDependencies:
+      '@iconify-json/devicon':
+        specifier: ^1.1.43
+        version: 1.1.43
+      '@iconify-json/logos':
+        specifier: ^1.1.43
+        version: 1.1.43
+      playwright-chromium:
+        specifier: ^1.44.1
+        version: 1.44.1
 
 packages:
 
@@ -654,6 +664,18 @@ packages:
       '@iconify/types': 2.0.0
     dev: false
 
+  /@iconify-json/devicon@1.1.43:
+    resolution: {integrity: sha512-YOz/uZfh+mIzXTQI4Kh6IKHs5h8QJN9lCDXDejof6r8F3ICAVivJcrDSnR/9pMuecvGsxdB41wipvpC0roCPcg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/logos@1.1.43:
+    resolution: {integrity: sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify-json/ph@1.1.13:
     resolution: {integrity: sha512-xtM4JJ63HCKj09WRqrBswXiHrpliBlqboWSZH8odcmqYXbvIFceU9/Til4V+MQr6+MoUC+KB72cxhky2+A6r/g==}
     dependencies:
@@ -668,7 +690,6 @@ packages:
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: false
 
   /@iconify/utils@2.1.24:
     resolution: {integrity: sha512-H8r2KpL5uKyrkb3z9/3HD/22JcxqW3BJyjEWZhX2T7DehnYVZthEap1cNsEl/UtCDC3TlpNmwiPX8wg3y8E4dg==}
@@ -1059,7 +1080,7 @@ packages:
     dev: false
     optional: true
 
-  /@slidev/cli@0.49.10(@types/markdown-it@14.1.1)(postcss@8.4.38):
+  /@slidev/cli@0.49.10(@types/markdown-it@14.1.1)(playwright-chromium@1.44.1)(postcss@8.4.38):
     resolution: {integrity: sha512-DnVsvB+5CQPAexBwl0DUwp8/4n5FOQYDhAryZqTiUoO7ig5KRqb+FXnvhk5jGJeOdpuaegyjT4ll/5VWDXCdUA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
@@ -1113,6 +1134,7 @@ packages:
       open: 10.1.0
       pdf-lib: 1.17.1
       plantuml-encoder: 1.4.0
+      playwright-chromium: 1.44.1
       postcss-nested: 6.0.1(postcss@8.4.38)
       pptxgenjs: 3.12.0
       prismjs: 1.29.0
@@ -4406,6 +4428,19 @@ packages:
   /plantuml-encoder@1.4.0:
     resolution: {integrity: sha512-sxMwpDw/ySY1WB2CE3+IdMuEcWibJ72DDOsXLkSmEaSzwEUaYBT6DWgOfBiHGCux4q433X6+OEFWjlVqp7gL6g==}
     dev: false
+
+  /playwright-chromium@1.44.1:
+    resolution: {integrity: sha512-S35fvljThsCDhUiGSYST3MkT7hsUvNA6SC+fAaBxKLUdOkc6ohatxD+A5HoN7fEK3zE+yI0ARANSGRHTHJR6UQ==}
+    engines: {node: '>=16'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.44.1
+
+  /playwright-core@1.44.1:
+    resolution: {integrity: sha512-wh0JWtYTrhv1+OSsLPgFzGzt67Y7BE/ZS3jEqgGBlp2ppp1ZDj8c+9IARNW4dwf1poq5MgHreEM2KV/GuR4cFA==}
+    engines: {node: '>=16'}
+    hasBin: true
 
   /points-on-curve@0.2.0:
     resolution: {integrity: sha512-0mYKnYYe9ZcqMCWhUjItv/oHjvgEsfKvnUTg8sAtnHr3GVy7rGkXCb6d5cSyqrWqL4k81b9CPg3urd+T7aop3A==}

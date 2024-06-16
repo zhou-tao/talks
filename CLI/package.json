@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "slide:dev": "pnpm -C slides dev",
-    "slide:build": "pnpm -C slides build",
+    "dev": "pnpm -C slides dev",
+    "build": "pnpm -C slides build",
     "demo1": "demo1",
     "demo2": "demo2"
   },

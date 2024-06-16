@@ -5,12 +5,17 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export:ppt": "slidev export --format pptx"
   },
   "dependencies": {
     "@slidev/cli": "^0.49.9",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "vue": "^3.4.27"
+  },
+  "devDependencies": {
+    "@iconify-json/devicon": "^1.1.43",
+    "@iconify-json/logos": "^1.1.43",
+    "playwright-chromium": "^1.44.1"
   }
 }
