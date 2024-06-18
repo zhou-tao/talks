@@ -3,12 +3,10 @@
   "scripts": {
     "dev": "pnpm -C slides dev",
     "build": "pnpm -C slides build",
-    "demo1": "demo1",
-    "demo2": "demo2"
+    "demo": "demo"
   },
   "license": "MIT",
   "devDependencies": {
-    "@cli/demo1": "workspace:^",
-    "@cli/demo2": "workspace:^"
+    "@cli/demo": "workspace:^"
   }
 }

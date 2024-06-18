@@ -365,19 +365,149 @@ transition: slide-left
 
 # CLI 开发工具库 - commander
 
+commander 可以用来描述你的命令行界面，并负责将参数解析为选项和命令参数。
+
+```bash
+$ vue
+Usage: vue <command> [options]
+
+Options:
+  -V, --version                              output the version number
+  -h, --help                                 output usage information
+
+Commands:
+  create [options] <app-name>                create a new project powered by vue-cli-service
+  add [options] <plugin> [pluginOptions]     install a plugin and invoke its generator in an already created project
+  invoke [options] <plugin> [pluginOptions]  invoke the generator of a plugin in an already created project
+  inspect [options] [paths...]               inspect the webpack config in a project with vue-cli-service
+  serve [options] [entry]                    serve a .js or .vue file in development mode with zero config
+  build [options] [entry]                    build a .js or .vue file in production mode with zero config
+  ui [options]                               start and open the vue-cli ui
+  init [options] <template> <app-name>       generate a project from a remote template
+  config [options] [value]                   inspect and modify the config
+  outdated [options]                         (experimental) check for outdated vue cli service / plugins
+  upgrade [options] [plugin-name]            (experimental) upgrade vue cli service / plugins
+  migrate [options] [plugin-name]            (experimental) run migrator for an already-installed cli plugin
+  info                                       print debugging information about your environment
+
+```
+
 ---
 transition: slide-left
 ---
 
-# CLI 开发工具库 - inquirer、chalk
+# CLI 开发工具库 - commander
+
+```js
+const { program } = require('commander')
+
+// 配置命令行工具名称、版本号、基础用法
+program
+  .name('demo')
+  .version(`@cli/demo ${require('./package').version}`)
+  .usage('<command> [options]')
+
+// 定义一个 create 命令
+program
+  .command('create <app-name>')
+  .description('create a new project')
+  .action((name) => {
+    console.log(`TODO: create project ${name}`)
+  })
+
+// 解析命令行参数入口
+program.parse(process.argv)
+```
+<br>
+
+```bash
+$ pnpm demo create my-project
+
+TODO: create project my-app
+
+```
 
 ---
-transition: slide-up
+transition: slide-left
+layout: two-cols
 ---
 
-# 代码导读
+# CLI 开发工具库 - inquirer
 
-[vue-cli](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli)
+vue-cli 初始化项目的询问选项
+
+<br>
+
+<img src="/vue-cli-prompts.png" width="95%">
+
+::right::
+
+```js
+const inquirer = require('inquirer')
+
+// 在 add 命令内部（详见packages/demo/index.js）
+inquirer.prompt([
+  {
+    type: 'list',
+    name: 'name',
+    message: '请选择需要添加的插件',
+    choices: ['pluginA', 'pluginB', 'pluginC']
+  },
+  {
+    type: 'input',
+    name: 'directory',
+    message: '请输入添加的目标目录路径'
+  },
+  // more...
+]).then(answer => {
+  console.log('prompts answer:', answer)
+})
+```
+
+```bash
+$ pnpm demo add
+
+? 请选择需要添加的插件 (Use arrow keys)
+> pluginA
+  pluginB
+  pluginC
+
+```
+
+---
+transition: slide-left
+layout: two-cols
+---
+
+# CLI 开发工具库 - chalk
+
+```js
+const chalk = require('chalk')
+
+// Combine styled and normal strings
+console.log(chalk.blue('Hello') + ' World' + chalk.red('!'));
+
+// Compose multiple styles using the chainable API
+console.log(chalk.blue.bgRed.bold('Hello world!'));
+
+// Pass in multiple arguments
+console.log(chalk.blue('Hello', 'World!', 'Foo', 'bar', 'biz', 'baz'));
+
+// Nest styles
+console.log(chalk.red('Hello', chalk.underline.bgBlue('world') + '!'));
+
+// Nest styles of the same type even (color, underline, background)
+console.log(chalk.green(
+  'I am a green line ' +
+  chalk.blue.underline.bold('with a blue substring') +
+  ' that becomes green again!'
+));
+
+```
+
+::right::
+
+<img src="/chalk-demo.png" width="100%" class="mt14 ml4">
 
 ---
 layout: center
