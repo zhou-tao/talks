@@ -179,7 +179,7 @@ transition: slide-left
 
 流程图
 
-<img src="/npm-run_process.awebp" width="80%">
+<img src="/npm-run_process.webp" width="80%">
 
 ---
 transition: slide-left
