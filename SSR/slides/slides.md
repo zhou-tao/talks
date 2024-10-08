@@ -29,9 +29,9 @@ overviewSnapshots: true
 transition: fade-out
 ---
 
-# Server-Side Rendering（服务端渲染）
+# Server-Side Rendering
 
-<img src="./img/ssr-flow.webp" width="80%"  mx-auto style="margin-top: 2rem">
+<img v-click src="./img/ssr-flow.webp" width="80%"  mx-auto style="margin-top: 2rem">
 
 ---
 transition: fade-out
@@ -97,12 +97,9 @@ transition: fade-out
   ]">
 </TwoCols>
 
-<v-click>
-
-<p text-center text-2xl font-bold style="margin-top: 2rem">
+<p v-click text-center text-2xl font-bold style="margin-top: 2rem">
 服务端渲染（SSR）不是一个新技术
 </p>
-</v-click>
 
 <!--
 JSP：大概8-10年前，盛行一种古老的前端开发模式，前端开发好静态界面(html+css)，发给后端改造成jsp然后填动态请求数据。所以，那时候前端也被叫【切图仔】
@@ -124,7 +121,8 @@ transition: fade-out
 
 <p text-2xl style="margin-top: 6rem">
 问题：
-
+<br>
+<br>
 怎样使用单页应用框架（Vue、React）来实现服务端渲染？
 </p>
 </v-click>
@@ -154,11 +152,16 @@ transition: fade-out
 transition: fade-out
 ---
 
-# SSR 成熟方案
+# SSR 应用框架
 
-- Nuxt
+- Vue
+  
+  - [Nuxt：https://nuxt.com.cn/](https://nuxt.com.cn/)
 
-- Next.js
+
+- React
+  
+  - [Next.js：https://nextjs.org/](https://nextjs.org/)
 
 ---
 transition: fade-out
@@ -179,3 +182,11 @@ transition: fade-out
 - 搜索引擎收录（百度、其他）
 
 - SEO测试工具
+
+---
+transition: fade-out
+layout: center
+class: text-center
+---
+
+# Thank You
