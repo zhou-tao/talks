@@ -1,0 +1,12 @@
+.slide-title {
+  font-size: 4rem !important;
+  text-shadow: #92FFC060 1px 0 20px;
+  background-image: linear-gradient(to bottom, #92FFC0 10%, #002661 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-reflect: below 5px -webkit-linear-gradient(transparent, transparent 5%, rgba(255, 255, 255, .3));
+}
+
+.slidev-layout h1 + p {
+  margin-top: 2rem !important;
+}
