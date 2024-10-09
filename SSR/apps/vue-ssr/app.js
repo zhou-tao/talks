@@ -1,4 +1,4 @@
-import { createSSRApp } from 'vue'
+import { createSSRApp, getCurrentInstance } from 'vue'
 
 export function createApp() {
   return createSSRApp({
@@ -25,19 +25,10 @@ export function createApp() {
       </table>
     `,
     created() {
-      console.log(this)
+      const { proxy } = getCurrentInstance()
       if (this.$ssrContext) {
         this.fruits = this.$ssrContext.fruits
       }
     }
-    // setup() {
-    //   const fruits = ref([])
-    //   const ctx = useSSRContext()
-    //   fruits.value = ctx.fruits
-    //   return {
-    //     count: 1,
-    //     fruits
-    //   }
-    // }
   })
 }

@@ -8,7 +8,7 @@ server.get('/', (req, res) => {
   const app = createApp()
 
   // 模拟后端进行数据查询、逻辑处理
-  fetch('http://localhost:3000/database/fruits.json').then(res => res.json()).then(data => {
+  fetch('http://localhost:8080/fruits').then(res => res.json()).then(data => {
     const ssrContext = {
       fruits: data
     }
@@ -39,8 +39,8 @@ server.get('/', (req, res) => {
 
 server.use(express.static('.'))
 
-server.listen(3000, () => {
+server.listen(3001, () => {
   console.log('App running at:')
   console.log()
-  console.log(' http://localhost:3000')
+  console.log(' http://localhost:3001')
 })

@@ -146,7 +146,13 @@ transition: fade-out
 
 # Client Hydration（客户端激活）
 
-介绍、为什么要注水？
+这个步骤也叫：注水、水合，是SSR中非常关键的一个步骤。
+
+因为服务端只能组装数据生成静态的HTML模版（非真正DOM），注水就是将静态的HTML模版在客户端渲染再将其中各个DOM的事件对应绑定起来。它让客户端的应用变得可交互。
+
+<br>
+
+<img v-click src="./img/hydrate.png">
 
 ---
 transition: fade-out

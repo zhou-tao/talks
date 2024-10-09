@@ -1,0 +1,11 @@
+{
+  "name": "@ssr/server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
