@@ -40,3 +40,14 @@
 - 搜索引擎收录（百度、其他）
 
 - seo测试工具
+
+
+TODO: 
+
+1. vue-ssr 接收ssr context
+
+2. nuxt 中 useFetch server:false时无数据
+
+3. lighthouse 评分对比
+
+4. seo其他测试工具
