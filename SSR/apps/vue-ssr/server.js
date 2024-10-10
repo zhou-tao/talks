@@ -5,14 +5,16 @@ import { createApp } from './app.js'
 const server = express()
 
 server.get('/', (req, res) => {
-  const app = createApp()
-
+  
   // 模拟后端进行数据查询、逻辑处理
   fetch('http://localhost:8080/fruits').then(res => res.json()).then(data => {
     const ssrContext = {
       fruits: data
     }
-    renderToString(app, ssrContext).then((html) => {
+
+    const app = createApp(ssrContext)
+
+    renderToString(app).then((html) => {
       res.send(`
       <!DOCTYPE html>
       <html>

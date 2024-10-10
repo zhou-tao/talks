@@ -41,10 +41,14 @@
 
 - seo测试工具
 
+  - bing：[webmaster tools - https://www.bing.com/webmasters/about](https://www.bing.com/webmasters/about?setlang=zh-cn)
+  
+  - google chrome：[google search central - https://developers.google.cn/search](https://developers.google.cn/search)
+
 
 TODO: 
 
-1. vue-ssr 接收ssr context
+1. ~~vue-ssr 接收ssr context~~
 
 2. nuxt 中 useFetch server:false时无数据
 

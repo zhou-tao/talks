@@ -2,5 +2,11 @@
   { "name": "apple", "price": "10" },
   { "name": "banana", "price": "15" },
   { "name": "orange", "price": "18" },
-  { "name": "watermelon", "price": "20" }
+  { "name": "watermelon", "price": "20" },
+  { "name": "watermelon1", "price": "20" },
+  { "name": "watermelon2", "price": "20" },
+  { "name": "watermelon3", "price": "20" },
+  { "name": "watermelon4", "price": "20" },
+  { "name": "watermelon5", "price": "20" },
+  { "name": "watermelon6", "price": "20" }
 ]

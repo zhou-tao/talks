@@ -1,34 +1,33 @@
-import { createSSRApp, getCurrentInstance } from 'vue'
+import { createSSRApp } from 'vue'
 
-export function createApp() {
+export function createApp(context) {
   return createSSRApp({
     data: () => ({
       count: 1,
       fruits: []
     }),
     template: `
-      <button @click="count++">click: {{ count }}</button>
-      <br>
-      <table>
-        <thead>
-          <tr>
-            <th>name</th>
-            <th>price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="fruit in fruits" :key="fruit.name">
-            <td>{{ fruit.name }}</td>
-            <td>{{ fruit.price }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div>
+        <button @click="count++">click: {{ count }}</button>
+        <br>
+        <table>
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="fruit in fruits" :key="fruit.name">
+              <td>{{ fruit.name }}</td>
+              <td>{{ fruit.price }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     `,
     created() {
-      const { proxy } = getCurrentInstance()
-      if (this.$ssrContext) {
-        this.fruits = this.$ssrContext.fruits
-      }
+      this.fruits = context.fruits
     }
   })
 }

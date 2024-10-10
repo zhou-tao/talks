@@ -3,7 +3,7 @@
     <h1>Hello Nuxt!</h1>
     <button @click="count++">click: {{ count }}</button>
     <br>
-    <table>
+    <table v-if="!pending">
       <thead>
         <tr>
           <th>name</th>
@@ -23,19 +23,16 @@
 <script setup>
 
 const count = ref(0)
-const fruits = ref([])
 
 const API_URL = 'http://localhost:8080/fruits'
 
-// /* 此调用在水合之前执行 */
-const { data } = await useFetch(API_URL)
+/* 此调用在水合之前执行 */
+// const { pending, data: fruits } = await useFetch(API_URL)
 
-// /* 此调用仅在客户端执行 */
-// const { data } = await useFetch(API_URL, {
-//   server: true
-// })
-
-fruits.value = data.value
+/* 此调用仅在客户端执行 */
+const { pending, data: fruits } = useFetch(API_URL, {
+  server: false
+})
 
 </script>
 

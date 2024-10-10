@@ -173,21 +173,23 @@ transition: fade-out
 transition: fade-out
 ---
 
-# SEO 可视化
+# SEO 检查
 
 Google Chrome - Lighthouse
 
-<img src="./img/lighthouse.jpg" width="60%" m-auto >
+<img src="./img/lighthouse.jpg" width="60%" m-auto>
 
 ---
 transition: fade-out
 ---
 
-# SEO 可视化
-
-- 搜索引擎收录（百度、其他）
+# SEO 检查
 
 - SEO测试工具
+
+  - bing：[webmaster tools - https://www.bing.com/webmasters/about](https://www.bing.com/webmasters/about?setlang=zh-cn)
+  
+  - google chrome：[google search central - https://developers.google.cn/search](https://developers.google.cn/search)
 
 ---
 transition: fade-out
