@@ -21,10 +21,6 @@ overviewSnapshots: true
 
 <h1 class="slide-title">服务端渲染（SSR）</h1>
 
-<!--
-对于SSR大家或多或少应该都听说过，主要是针对一些toC的项目。而在我们目前的工作中，接触到的基本都是toB（EBG）项目，萤石应该是有一些toC的项目。所以呢，这次分享主要是带大家更全面的了解下SSR以及运行流程，万一以后有需要的时候可以有一些思路。
--->
-
 ---
 transition: fade-out
 ---
@@ -190,6 +186,8 @@ transition: fade-out
   - bing：[webmaster tools - https://www.bing.com/webmasters/about](https://www.bing.com/webmasters/about?setlang=zh-cn)
   
   - google chrome：[google search central - https://developers.google.cn/search](https://developers.google.cn/search)
+  
+  - baidu：[baidu seo - https://seo.baidu.com](https://seo.baidu.com)
 
 ---
 transition: fade-out

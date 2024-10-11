@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm -C slides dev",
+    "export": "pnpm -C slides export",
     "dev:ssr": "pnpm -C apps/vue-ssr dev",
     "dev:nuxt": "pnpm -C apps/nuxt dev",
     "dev:server": "pnpm -C server dev",
