@@ -7,7 +7,7 @@
     "dev:ssr": "pnpm -C apps/vue-ssr dev",
     "dev:nuxt": "pnpm -C apps/nuxt dev",
     "dev:server": "pnpm -C server dev",
-    "build": "pnpm -C client build",
+    "build": "pnpm -C slides build",
     "build:csr": "pnpm -C client build"
   },
   "devDependencies": {
