@@ -7,9 +7,11 @@
     "dev:ssr": "pnpm -C apps/vue-ssr dev",
     "dev:nuxt": "pnpm -C apps/nuxt dev",
     "dev:server": "pnpm -C server dev",
+    "build": "pnpm -C client build",
     "build:csr": "pnpm -C client build"
   },
   "devDependencies": {
+    "playwright-chromium": "1.44.1",
     "vue": "^3.5.11"
   }
 }
