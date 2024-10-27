@@ -27,7 +27,7 @@ transition: fade-out
 
 # Server-Side Rendering
 
-<img v-click src="./img/ssr-flow.webp" width="80%"  mx-auto style="margin-top: 2rem">
+<img v-click src="/img/ssr-flow.webp" width="80%"  mx-auto style="margin-top: 2rem">
 
 ---
 transition: fade-out
@@ -133,7 +133,7 @@ transition: fade-out
 
 <v-click>
 
-![SSR Flow](./img/ssr-impl-flow.webp)
+![SSR Flow](/img/ssr-impl-flow.webp)
 </v-click>
 
 ---
@@ -148,7 +148,7 @@ transition: fade-out
 
 <br>
 
-<img v-click src="./img/hydrate.png">
+<img v-click src="/img/hydrate.png">
 
 ---
 transition: fade-out
@@ -173,7 +173,7 @@ transition: fade-out
 
 Google Chrome - Lighthouse
 
-<img src="./img/lighthouse.jpg" width="60%" m-auto>
+<img src="/img/lighthouse.jpg" width="60%" m-auto>
 
 ---
 transition: fade-out
