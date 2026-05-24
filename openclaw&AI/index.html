@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw 与 AI 实践</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;600;700;900&display=swap');
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: #0a0e1a;
+    }
+
+    .reveal {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .reveal h1, .reveal h2 {
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .reveal h3 { color: #93c5fd; }
+    .reveal h4 { color: #c084fc; }
+
+    .reveal blockquote {
+      border-left: 4px solid #3b82f6;
+      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.05));
+      padding: 15px 20px !important;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .reveal table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 0.85em;
+    }
+    .reveal th {
+      background: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(139,92,246,0.2));
+      color: #93c5fd;
+      padding: 12px 16px;
+    }
+    .reveal td {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 10px 16px;
+    }
+    .reveal tr:hover td { background: rgba(59,130,246,0.08); }
+
+    .reveal pre {
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .reveal code {
+      color: #7dd3fc;
+    }
+
+    .slide-background {
+      background: linear-gradient(135deg, #0a0e1a 0%, #111827 40%, #0f172a 70%, #0a0f1e 100%) !important;
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .card-grid-2 { grid-template-columns: 1fr 1fr; }
+    .card-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .card-grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+    .card {
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(59,130,246,0.15);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75em;
+      background: rgba(59,130,246,0.15);
+      color: #93c5fd;
+    }
+
+    .milestone-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 200px;
+      margin-top: 30px;
+      padding: 0 10px;
+    }
+    .milestone-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+    .milestone-bar-inner {
+      width: 40px;
+      border-radius: 6px 6px 0 0;
+      transition: height 1s;
+    }
+
+    .glow-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      font-size: 1.1em;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .glow-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59,130,246,0.5);
+    }
+
+    .section-title {
+      text-align: center;
+    }
+    .section-title .ornament {
+      font-size: 4rem;
+      opacity: 0.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .screenshot-right {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+    .screenshot-right .content { flex: 1; }
+    .screenshot-right .img-wrap {
+      flex: 0 0 45%;
+      max-width: 45%;
+    }
+    .screenshot-right img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .svg-chart {
+      width: 100%;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .tag-line {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== 封面 ==================== -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h1 style="font-size:3em">OpenClaw 与 AI 实践</h1>
+  <p style="color:#94a3b8;font-size:1.2em;margin-top:-0.3em">前端开发者的 AI 提效指南</p>
+  <br>
+  <button class="glow-btn" onclick="Reveal.next()">
+    开始探索
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </button>
+  <p style="margin-top:3em;font-size:0.8em;color:#475569">按 ↓ / → 翻页 · Space 下一页 · ESC 总览</p>
+</section>
+
+<!-- ==================== 第一部分：OpenClaw ==================== -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="section-title">
+    <div class="ornament">✦</div>
+    <h1>OpenClaw</h1>
+    <h2 style="color:#94a3b8;font-weight:400">开源 AI 助手的「iPhone 时刻」</h2>
+  </div>
+</section>
+
+<!-- OpenClaw 是什么 -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="screenshot-right">
+    <div class="content">
+      <h2>OpenClaw 是什么？</h2>
+      <blockquote style="margin:1em 0">相当于开源的 ChatGPT + 自动化引擎</blockquote>
+      <h3 style="margin-top:1.2em">✨ 核心特性</h3>
+      <ul>
+        <li>🧠 <strong>多模型支持</strong> — OpenAI / Claude / DeepSeek / 本地</li>
+        <li>🔌 <strong>多平台接入</strong> — QQ / Discord / Telegram / Signal</li>
+        <li>🛠 <strong>可编程 Agent</strong> — Skills / Hooks / Sub-Agents</li>
+        <li>🔒 <strong>本地优先</strong> — 数据在自己手里</li>
+        <li>🎨 <strong>可视化控制台</strong> — 开箱即用的 Web UI</li>
+      </ul>
+    </div>
+    <div class="img-wrap">
+      <img src="public/screenshots/ui首页.png" alt="OpenClaw UI">
+    </div>
+  </div>
+</section>
+
+<!-- 为什么这么火 -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="two-col">
+    <div>
+      <h2>为什么这么火？</h2>
+      <h3 style="color:#fbbf24;margin-top:1em">🔥 120 天登顶 GitHub Stars 历史第一</h3>
+      <p style="color:#94a3b8">超过 Linux、Vue、React 等传奇项目</p>
+      <h3 style="color:#4ade80;margin-top:1.5em">📈 增速恐怖</h3>
+      <ul>
+        <li>2025 年初发布</li>
+        <li>不到 4 个月拿下 <strong>200k+ Stars</strong></li>
+        <li>社区活跃度空前</li>
+      </ul>
+    </div>
+    <div>
+      <div style="text-align:center;font-size:5rem;opacity:0.2;margin-bottom:0.5em">🚀</div>
+      <p style="text-align:center;color:#64748b;font-size:0.9em">"开源 AI 领域的超级明星"</p>
+      <div class="card" style="background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(59,130,246,0.04));border:1px solid rgba(34,197,94,0.3)">
+        <h4 style="color:#4ade80">为什么开发者追捧？</h4>
+        <ul style="font-size:0.85em;margin-top:0.5em">
+          <li>✅ ChatGPT 平替，但完全可控</li>
+          <li>✅ 开发者体验极致</li>
+          <li>✅ 插件生态爆发式增长</li>
+          <li>✅ 社区驱动，透明度极高</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GitHub Stars 增长 -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h2>GitHub Stars 增长趋势</h2>
+  <div style="display:flex;justify-content:center;margin-top:1em">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" class="svg-chart">
+      <defs>
+        <linearGradient id="lineG" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/>
+        </linearGradient>
+        <linearGradient id="areaG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(59,130,246,0.2)"/><stop offset="100%" stop-color="rgba(59,130,246,0.01)"/>
+        </linearGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="2.5"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <!-- 网格 -->
+      <line x1="80" y1="40" x2="80" y2="300" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="80" y1="105" x2="740" y2="105" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="80" y1="170" x2="740" y2="170" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="80" y1="235" x2="740" y2="235" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="80" y1="300" x2="740" y2="300" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <!-- Y 标签 -->
+      <text x="72" y="44" fill="#64748b" font-size="11" text-anchor="end">250k</text>
+      <text x="72" y="109" fill="#64748b" font-size="11" text-anchor="end">200k</text>
+      <text x="72" y="174" fill="#64748b" font-size="11" text-anchor="end">150k</text>
+      <text x="72" y="239" fill="#64748b" font-size="11" text-anchor="end">100k</text>
+      <text x="72" y="304" fill="#64748b" font-size="11" text-anchor="end">50k</text>
+      <!-- X 标签 -->
+      <text x="80" y="320" fill="#64748b" font-size="11" text-anchor="middle">1月</text>
+      <text x="195" y="320" fill="#64748b" font-size="11" text-anchor="middle">2月</text>
+      <text x="310" y="320" fill="#64748b" font-size="11" text-anchor="middle">3月</text>
+      <text x="425" y="320" fill="#64748b" font-size="11" text-anchor="middle">4月</text>
+      <text x="540" y="320" fill="#64748b" font-size="11" text-anchor="middle">5月</text>
+      <!-- 面积填充 -->
+      <path d="M80,300 L80,260 Q130,240 180,230 Q230,210 280,200 Q330,150 380,130 Q430,100 480,92 Q530,72 580,62 Q630,48 680,42 Q710,39 740,37 L740,300 Z" fill="url(#areaG)"/>
+      <!-- 趋势线 -->
+      <polyline points="80,260 130,240 180,230 230,210 280,200 330,150 380,130 430,100 480,92 530,72 580,62 630,48 680,42 710,39 740,37" fill="none" stroke="url(#lineG)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+      <!-- 数据点 -->
+      <circle cx="80" cy="260" r="4" fill="#3b82f6" stroke="#0f172a" stroke-width="2"/>
+      <circle cx="230" cy="210" r="4" fill="#3b82f6" stroke="#0f172a" stroke-width="2"/>
+      <circle cx="380" cy="130" r="5" fill="#8b5cf6" stroke="#0f172a" stroke-width="2"/>
+      <circle cx="530" cy="72" r="5" fill="#8b5cf6" stroke="#0f172a" stroke-width="2"/>
+      <circle cx="740" cy="37" r="6" fill="#a78bfa" stroke="#0f172a" stroke-width="2"/>
+      <!-- 里程碑 -->
+      <text x="80" y="252" fill="#3b82f6" font-size="10">🚀 发布 30k</text>
+      <text x="210" y="200" fill="#3b82f6" font-size="10">🔥 破 50k</text>
+      <text x="350" y="118" fill="#8b5cf6" font-size="10">⚡ 破 100k</text>
+      <text x="500" y="60" fill="#8b5cf6" font-size="10">💫 破 150k</text>
+      <text x="660" y="26" fill="#a78bfa" font-size="11" font-weight="bold">⭐ 200k+</text>
+    </svg>
+  </div>
+  <p class="tag-line">OpenClaw 仅用 120 天从 0 到 200k+ Stars</p>
+</section>
+
+<!-- 安装 -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="screenshot-right">
+    <div class="content">
+      <h2>怎么安装？</h2>
+      <blockquote style="margin:1em 0">一句话：<strong>一条命令搞定</strong></blockquote>
+      <h4 style="color:#e2e8f0">🪟 Windows</h4>
+      <pre><code class="bash">winget install openclaw</code></pre>
+      <h4 style="color:#e2e8f0">🍎 macOS</h4>
+      <pre><code class="bash">brew install openclaw</code></pre>
+      <h4 style="color:#e2e8f0">🐧 Linux</h4>
+      <pre><code class="bash">curl -fsSL https://get.openclaw.ai | bash</code></pre>
+      <h4 style="color:#e2e8f0">📦 Docker</h4>
+      <pre><code class="bash">docker run -d --name openclaw openclaw/openclaw</code></pre>
+    </div>
+    <div class="img-wrap">
+      <img src="public/screenshots/关注1-安装方式.png" alt="安装方式">
+    </div>
+  </div>
+</section>
+
+<!-- 配置与安全 -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="screenshot-right">
+    <div class="content">
+      <h2>配置与安全</h2>
+      <h4>🔑 添加 API Key</h4>
+      <pre><code class="bash">openclaw config set provider openai key sk-xxx
+openclaw config set provider deepseek key sk-xxx</code></pre>
+      <h4 style="margin-top:1em">✅ 快速验证</h4>
+      <pre><code class="bash">openclaw --version      # 确认 CLI 可用
+openclaw doctor         # 检查配置问题
+openclaw gateway status # 确认服务运行</code></pre>
+      <h4 style="margin-top:1em;color:#4ade80">🔐 安全要点</h4>
+      <ul>
+        <li>所有数据本地存储</li>
+        <li>敏感信息支持 SecretRef 加密存储</li>
+        <li>支持 OAuth 认证 + 细粒度权限控制</li>
+      </ul>
+    </div>
+    <div class="img-wrap">
+      <img src="public/screenshots/关注2-填写API key.png" alt="API Key">
+    </div>
+  </div>
+</section>
+
+<!-- 快速使用 -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="screenshot-right">
+    <div class="content">
+      <h2>快速使用</h2>
+      <h4>🌐 控制台 UI</h4>
+      <p>访问 <a href="http://127.0.0.1:18789" style="color:#60a5fa">http://127.0.0.1:18789</a></p>
+      <ul>
+        <li>Vite + Lit 构建的单页应用</li>
+        <li>直接在浏览器上对话</li>
+        <li>可视化配置管理</li>
+      </ul>
+      <h4 style="margin-top:1em">📱 连接外部平台</h4>
+      <pre><code class="bash">openclaw channels add --channel qqbot --token "***"
+openclaw channels add --channel discord --token "***"
+openclaw channels add --channel telegram --token "***"</code></pre>
+      <p style="margin-top:0.5em">> 写一次 Skill，QQ / Discord / Web 同步可用</p>
+    </div>
+    <div class="img-wrap">
+      <img src="public/screenshots/关注3-频道.png" alt="频道配置">
+    </div>
+  </div>
+</section>
+
+<!-- 环境配置 -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="screenshot-right">
+    <div class="content">
+      <h2>建议环境配置</h2>
+      <table>
+        <tr><th>配置项</th><th>最低要求</th><th>推荐配置</th></tr>
+        <tr><td>CPU</td><td>4 核</td><td>8 核+</td></tr>
+        <tr><td>内存</td><td>8GB</td><td>16GB+</td></tr>
+        <tr><td>存储</td><td>10GB</td><td>50GB+</td></tr>
+      </table>
+      <h4 style="margin-top:1em">软件推荐</h4>
+      <ul>
+        <li>Node.js ≥ 18.x（推荐 22.x LTS）</li>
+        <li>npm / pnpm 包管理器</li>
+        <li>Git（插件管理依赖）</li>
+        <li>Docker（可选，容器化部署）</li>
+      </ul>
+      <p style="margin-top:0.5em;font-size:0.85em;color:#94a3b8">💡 纯 C2C 模式，普通笔记本完全够用</p>
+    </div>
+    <div class="img-wrap">
+      <img src="public/screenshots/建议安装环境.png" alt="环境配置">
+    </div>
+  </div>
+</section>
+
+<!-- 典型应用场景 -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h2 style="text-align:center">典型应用场景</h2>
+  <div class="card-grid card-grid-3" style="margin-top:1.5em">
+    <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(59,130,246,0.03));border:1px solid rgba(59,130,246,0.25);text-align:center">
+      <div style="font-size:3em">👨‍💻</div>
+      <h4 style="color:#93c5fd">队友编程</h4>
+      <p style="font-size:0.85em;color:#94a3b8">日常编码辅助<br>Code Review<br>Debug 协作</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,rgba(168,85,247,0.12),rgba(168,85,247,0.03));border:1px solid rgba(168,85,247,0.25);text-align:center">
+      <div style="font-size:3em">📱</div>
+      <h4 style="color:#c4b5fd">AI 账号赛道</h4>
+      <p style="font-size:0.85em;color:#94a3b8">公众号文章自动生成<br>小红书/知乎运营<br>B站脚本写作</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,rgba(251,146,60,0.12),rgba(251,146,60,0.03));border:1px solid rgba(251,146,60,0.25);text-align:center">
+      <div style="font-size:3em">🤖</div>
+      <h4 style="color:#fdba74">自动化工作流</h4>
+      <p style="font-size:0.85em;color:#94a3b8">定时任务<br>信息聚合<br>智能提醒</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1.5em;background:linear-gradient(135deg,rgba(234,179,8,0.1),rgba(234,179,8,0.03));border:1px solid rgba(234,179,8,0.25);text-align:center">
+    <strong style="color:#fbbf24">🎯 OpenClaw 定位：</strong>不是 Chatbot，是你的 <strong style="color:#fde047">AI 操作系统</strong>
+  </div>
+</section>
+
+<!-- ==================== 第二部分：Hermes ==================== -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="section-title">
+    <div class="ornament">✦</div>
+    <h1>Hermes</h1>
+    <h2 style="color:#94a3b8;font-weight:400">让 Agent 拥有「手」和「眼睛」</h2>
+  </div>
+</section>
+
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="two-col">
+    <div>
+      <h2>Hermes 是什么？</h2>
+      <blockquote style="margin:1em 0">Agent 执行引擎 — 让 AI 不只「会说」，更能「会做」</blockquote>
+      <h3>核心能力</h3>
+      <ul>
+        <li>🧩 <strong>工具调用</strong> — 调 API、读文件、写代码</li>
+        <li>👀 <strong>视觉识别</strong> — 看懂截图、UI、流程图</li>
+        <li>🖐️ <strong>浏览器操控</strong> — AI 自动操作网页</li>
+        <li>📋 <strong>文件系统</strong> — 读写本地文件</li>
+        <li>💬 <strong>多轮交互</strong> — 复杂任务分步执行</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card" style="margin-top:2em;background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(99,102,241,0.04));border:1px solid rgba(99,102,241,0.3)">
+        <h3 style="color:#a5b4fc">⚡ 一句话总结</h3>
+        <p>Hermes 是 OpenClaw 的 <strong>「操作系统」</strong></p>
+        <p style="font-size:0.85em;color:#94a3b8">它把 AI 从聊天框里解放出来，<br>让 Agent 真正能动手干活</p>
+      </div>
+      <div class="card" style="margin-top:1em;background:linear-gradient(135deg,rgba(100,116,139,0.1),rgba(100,116,139,0.03));border:1px solid rgba(100,116,139,0.25)">
+        <p style="font-size:0.85em">ChatGPT → 只会说话的知识分子<br>Hermes → 既能说话又能动手的工程师</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h2>Hermes 的典型能力</h2>
+  <div class="card-grid card-grid-2" style="margin-top:1.5em">
+    <div class="card" style="background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.03));border:1px solid rgba(34,197,94,0.25)">
+      <h4 style="color:#4ade80">🔧 代码执行</h4>
+      <p style="font-size:0.85em;color:#94a3b8">在沙箱中运行 Python/Node.js，安装依赖，处理数据</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(59,130,246,0.03));border:1px solid rgba(59,130,246,0.25)">
+      <h4 style="color:#60a5fa">🌐 网页访问</h4>
+      <p style="font-size:0.85em;color:#94a3b8">抓取网页内容，提交表单，API 调用，数据采集</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,rgba(168,85,247,0.12),rgba(168,85,247,0.03));border:1px solid rgba(168,85,247,0.25)">
+      <h4 style="color:#c084fc">📁 文件操作</h4>
+      <p style="font-size:0.85em;color:#94a3b8">读写文件、搜索代码库、管理项目结构</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,rgba(251,146,60,0.12),rgba(251,146,60,0.03));border:1px solid rgba(251,146,60,0.25)">
+      <h4 style="color:#fb923c">🖼️ 视觉理解</h4>
+      <p style="font-size:0.85em;color:#94a3b8">分析 UI 截图、流程图、手绘图 → 生成代码</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 第三部分：工具对比 ==================== -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="section-title">
+    <div class="ornament">✦</div>
+    <h1>Agent 工具</h1>
+    <h2 style="color:#94a3b8;font-weight:400">横向对比</h2>
+  </div>
+</section>
+
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h2>主流 AI Agent 工具对比</h2>
+  <table style="margin-top:1em">
+    <tr><th>工具</th><th>定位</th><th>核心能力</th><th>价格</th><th>适用场景</th></tr>
+    <tr><td style="font-weight:bold;color:#34d399">OpenClaw</td><td>全能 AI 框架</td><td>多平台 + Agent + 自动化</td><td>免费开源</td><td>个人/团队全能助手</td></tr>
+    <tr><td style="font-weight:bold;color:#60a5fa">Claude Code</td><td>终端编程助手</td><td>深度代码理解 + 自动编辑</td><td>按 Token</td><td>专业编程</td></tr>
+    <tr><td style="font-weight:bold;color:#c084fc">Codex</td><td>IDE 插件</td><td>代码补全 + 对话</td><td>按月订阅</td><td>日常编码</td></tr>
+    <tr><td style="font-weight:bold;color:#fb923c">Cursor</td><td>AI IDE</td><td>原生 AI 编辑器</td><td>按月订阅</td><td>AI First 开发</td></tr>
+    <tr><td style="font-weight:bold;color:#22d3ee">Cline</td><td>VS Code 插件</td><td>终端 + 编辑器集成</td><td>BYOK</td><td>VS Code 增强</td></tr>
+  </table>
+  <div class="card" style="margin-top:1.5em;background:linear-gradient(135deg,rgba(234,179,8,0.1),rgba(234,179,8,0.03));border:1px solid rgba(234,179,8,0.25)">
+    <h4 style="color:#fbbf24">💡 选型建议</h4>
+    <p style="font-size:0.85em"><strong>OpenClaw + Claude Code + Cursor</strong> 是很多开发者的黄金组合</p>
+    <p style="font-size:0.8em;color:#94a3b8">OpenClaw 负责流程自动化，Claude Code 负责深度编码，Cursor 负责日常编写</p>
+  </div>
+</section>
+
+<!-- ==================== 第四部分：Claude Code ==================== -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="section-title">
+    <div class="ornament">✦</div>
+    <h1>Claude Code</h1>
+    <p style="color:#94a3b8">目前公司可用 · 最主流的 AI 编程 Agent</p>
+  </div>
+</section>
+
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h2>Claude Code 核心三件套</h2>
+  <p style="color:#94a3b8">Skills · Hooks · Sub-Agents</p>
+  <div class="card-grid card-grid-3" style="margin-top:1.5em">
+    <div class="card" style="background:linear-gradient(180deg,rgba(168,85,247,0.18),rgba(168,85,247,0.04));border:1px solid rgba(168,85,247,0.3)">
+      <div style="font-size:2.5em">🧩</div>
+      <h3 style="color:#c084fc">Skills</h3>
+      <p style="font-size:0.85em;color:#94a3b8">可复用的能力模块</p>
+      <ul style="font-size:0.8em;color:#94a3b8">
+        <li>封装特定技能</li>
+        <li>一次编写，处处使用</li>
+        <li>可共享、可版本管理</li>
+      </ul>
+    </div>
+    <div class="card" style="background:linear-gradient(180deg,rgba(34,211,238,0.18),rgba(34,211,238,0.04));border:1px solid rgba(34,211,238,0.3)">
+      <div style="font-size:2.5em">🪝</div>
+      <h3 style="color:#22d3ee">Hooks</h3>
+      <p style="font-size:0.85em;color:#94a3b8">事件触发机制</p>
+      <ul style="font-size:0.8em;color:#94a3b8">
+        <li>在关键节点插入逻辑</li>
+        <li>自动预处理/后处理</li>
+        <li>构建工作流流水线</li>
+      </ul>
+    </div>
+    <div class="card" style="background:linear-gradient(180deg,rgba(251,191,36,0.18),rgba(251,191,36,0.04));border:1px solid rgba(251,191,36,0.3)">
+      <div style="font-size:2.5em">👥</div>
+      <h3 style="color:#fbbf24">Sub-Agents</h3>
+      <p style="font-size:0.85em;color:#94a3b8">子任务代理</p>
+      <ul style="font-size:0.8em;color:#94a3b8">
+        <li>拆分复杂任务</li>
+        <li>并行执行子任务</li>
+        <li>独立上下文互不干扰</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 第五部分：实操技巧 ==================== -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <div class="section-title">
+    <div class="ornament">✦</div>
+    <h1>开发实操技巧</h1>
+    <p style="color:#94a3b8">用好 AI 的「长板」，避开 AI 的「短板」</p>
+  </div>
+</section>
+
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h2>AI 的短板：视觉稿还原</h2>
+  <div class="two-col" style="margin-top:1.5em">
+    <div class="card" style="background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(239,68,68,0.03));border:1px solid rgba(239,68,68,0.25)">
+      <h4 style="color:#f87171">🎨 视觉稿 → 代码</h4>
+      <p style="font-size:0.85em;color:#94a3b8">AI 目前最大的弱项之一</p>
+      <ul style="font-size:0.8em;color:#94a3b8">
+        <li>❌ 像素级还原困难</li>
+        <li>❌ 多图层动效理解差</li>
+        <li>❌ 设计规范难保持</li>
+        <li>❌ 交互逻辑理解有限</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card" style="border:1px solid rgba(100,116,139,0.25)">
+        <h4 style="color:#94a3b8">🔍 现有方案对比</h4>
+        <ul style="font-size:0.8em;color:#94a3b8">
+          <li><strong>MaaS 应用</strong> — 简单截图生成代码，精度有限</li>
+          <li><strong>Pixso</strong> — Figma 替代品，设计稿转代码</li>
+          <li><strong>视觉大模型</strong> — GPT-4V 等理解 UI</li>
+          <li><strong>Workbuddy / 马维斯</strong> — 专门工具</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1em;background:linear-gradient(135deg,rgba(234,179,8,0.1),rgba(234,179,8,0.03));border:1px solid rgba(234,179,8,0.25)">
+    <h4 style="color:#fbbf24">💡 当前最优实践</h4>
+    <p style="font-size:0.85em">截图 + 结构描述 + 组件化拆分 → AI 辅助生成组件骨架，人工微调样式细节</p>
+  </div>
+</section>
+
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h2>AI 的强项：逻辑性功能</h2>
+  <div class="two-col" style="margin-top:1.5em">
+    <div class="card" style="background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(34,197,94,0.03));border:1px solid rgba(34,197,94,0.25)">
+      <h4 style="color:#4ade80">📌 场景 A：确定方案</h4>
+      <p style="font-size:0.85em;color:#e2e8f0">直接告知 AI 执行即可</p>
+      <ul style="font-size:0.8em;color:#94a3b8">
+        <li>✅ "用 ref 实现..."、"改成..."</li>
+        <li>✅ 有明确技术选型</li>
+        <li>✅ 有规范的标准操作</li>
+      </ul>
+      <p style="font-size:0.8em;margin-top:0.5em;font-family:monospace;color:#34d399">→ "把这个表格改成虚拟滚动"</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(59,130,246,0.03));border:1px solid rgba(59,130,246,0.25)">
+      <h4 style="color:#60a5fa">📌 场景 B：不确定方案 <span style="font-size:0.8em">分两轮 🎯</span></h4>
+      <ul style="font-size:0.8em;color:#94a3b8;margin-top:0.5em">
+        <li><strong>第 1 轮：</strong>描述问题，让 AI 推荐方案</li>
+        <li style="margin-left:1em;color:#64748b">→ 评估各方案优缺点</li>
+        <li><strong>第 2 轮：</strong>选定方案，让 AI 执行</li>
+        <li style="margin-left:1em;color:#64748b">→ 带着明确指令干活</li>
+      </ul>
+      <p style="font-size:0.8em;margin-top:0.5em;font-family:monospace;color:#60a5fa">→ "我想实现实时协作，有什么方案？"<br>→ "选 OT 方案，实现基础框架"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 总结 ==================== -->
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h2 style="text-align:center">总结</h2>
+  <div class="card-grid card-grid-3" style="margin-top:2em">
+    <div style="text-align:center">
+      <div style="font-size:4em">🦐</div>
+      <h4>OpenClaw</h4>
+      <p style="font-size:0.85em;color:#94a3b8">你的 AI 操作系统<br>多平台 + 自动化</p>
+    </div>
+    <div style="text-align:center">
+      <div style="font-size:4em">⚡</div>
+      <h4>AI Agent</h4>
+      <p style="font-size:0.85em;color:#94a3b8">编程提效<br>Claude Code + Cursor</p>
+    </div>
+    <div style="text-align:center">
+      <div style="font-size:4em">🎯</div>
+      <h4>最佳实践</h4>
+      <p style="font-size:0.85em;color:#94a3b8">扬长避短<br>场景决定用法</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:2em;background:linear-gradient(135deg,rgba(52,211,153,0.1),rgba(59,130,246,0.08));border:1px solid rgba(100,116,139,0.25)">
+    <div class="two-col">
+      <div>
+        <p><strong style="color:#4ade80">今天就能做：</strong></p>
+        <ul style="font-size:0.8em;color:#94a3b8">
+          <li>1️⃣ 安装 OpenClaw（5 分钟）</li>
+          <li>2️⃣ 接入 QQ / Discord</li>
+          <li>3️⃣ 体验 Agent 能力</li>
+          <li>4️⃣ 写第一个 Skill</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong style="color:#60a5fa">未来可探索：</strong></p>
+        <ul style="font-size:0.8em;color:#94a3b8">
+          <li>🔮 多 Agent 协作流水线</li>
+          <li>🔮 定时自动化任务</li>
+          <li>🔮 团队知识库集成</li>
+          <li>🔮 接入私有 MCP 服务</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-background-gradient="linear-gradient(135deg, #0a0e1a, #111827, #0f172a, #0a0f1e)">
+  <h1 style="font-size:3em;text-align:center">谢谢聆听 🦐</h1>
+  <p style="text-align:center;color:#94a3b8;font-size:1.2em">欢迎交流 & 一起探索</p>
+  <br><br>
+  <div style="display:flex;justify-content:center;gap:2em;flex-wrap:wrap">
+    <a href="https://docs.openclaw.ai" target="_blank" style="color:#60a5fa">📖 OpenClaw 文档</a>
+    <a href="https://github.com/openclaw/openclaw" target="_blank" style="color:#60a5fa">⭐ GitHub</a>
+    <a href="https://github.com/msitarzewski/agency-agents" target="_blank" style="color:#60a5fa">👥 Agency Agents</a>
+  </div>
+  <br>
+  <p style="text-align:center;font-size:0.9em">✉️ Q&A</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    controlsLayout: 'bottom-right',
+    controlsBackArrows: 'visible',
+    progress: true,
+    center: true,
+    hash: true,
+    transition: 'slide',
+    backgroundTransition: 'fade',
+    slideNumber: true,
+    plugins: [ RevealHighlight, RevealNotes ]
+  });
+</script>
+</body>
+</html>
