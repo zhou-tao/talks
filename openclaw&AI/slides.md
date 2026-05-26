@@ -1,10 +1,10 @@
 ---
-theme: nord
+theme: default
 background: false
-title: OpenClaw 与 AI 实践
+title: OpenClaw 与 AI 编程实践
 titleTemplate: '%s'
 info: |
-  ## OpenClaw 与 AI 实践分享
+  ## OpenClaw 与 AI 编程实践
   前端开发者的 AI 提效指南
 author: 阿虾的搭档
 presenter: true
@@ -20,148 +20,14 @@ fonts:
   sans: Noto Sans SC
   serif: Noto Serif SC
 monaco: true
-layoutClass: no-sidebar
 ---
 
 <style>
-/* ===== 全局基础样式 ===== */
-html, body {
-  font-family: 'Noto Sans SC', sans-serif;
-}
-
-/* 隐藏右侧章节目录 / 侧边栏 / 大纲 */
-.slidev-sidebar { display: none !important; }
-.slidev-toc { display: none !important; }
-.slidev-slide-nav { display: none !important; }
-.slidev-page-count { bottom: 12px !important; right: 20px !important; font-size: 12px !important; opacity: 0.5; }
-.slidev-layout { padding-left: 3.5rem !important; padding-right: 3.5rem !important; }
-
-/* ===== 科技背景 ===== */
-.slidev-layout {
-  position: relative;
-  background: linear-gradient(135deg, #2e3440 0%, #3b4252 40%, #2e3440 70%, #242933 100%) !important;
-}
-
-/* 北极光网格叠加层 */
-.slidev-layout::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    linear-gradient(rgba(136, 192, 208, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(136, 192, 208, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* 顶部北极光环境光 */
-.slidev-layout::after {
-  content: '';
-  position: absolute;
-  top: -200px; right: -200px;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(136, 192, 208, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* 确保内容在z-index上层 */
-.slidev-layout > * { position: relative; z-index: 1; }
-
-/* 底部光晕 */
-.slidev-layout .bottom-glow {
-  position: absolute;
-  bottom: -150px; left: -150px;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(129, 161, 193, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ===== 标题装饰 ===== */
-h1, h2 {
-  background: linear-gradient(135deg, #88c0d0, #81a1c1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-h3 {
-  color: #88c0d0;
-}
-
-/* 引用块美化 */
-blockquote {
-  border-left-color: #88c0d0 !important;
-  background: linear-gradient(135deg, rgba(136, 192, 208, 0.08), rgba(129, 161, 193, 0.05));
-  padding: 0.75rem 1.25rem !important;
-  border-radius: 0 8px 8px 0;
-}
-
-/* 代码块 */
-code {
-  color: #a3be8c !important;
-}
-
-/* 表格 */
-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  overflow: hidden;
-  border-radius: 12px;
-}
-thead th {
-  background: linear-gradient(135deg, rgba(136, 192, 208, 0.25), rgba(129, 161, 193, 0.2));
-  border: none !important;
-  color: #88c0d0 !important;
-  padding: 10px 14px !important;
-}
-tbody td {
-  border: none !important;
-  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
-  padding: 10px 14px !important;
-}
-tbody tr:hover td {
-  background: rgba(136, 192, 208, 0.06);
-}
-
-/* 分割标题页码 */
-.section-title h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-.section-title h2 {
-  font-size: 1.5rem;
-  background: linear-gradient(135deg, #88c0d0, #b48ead);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* 卡片悬浮效果 */
-.grid > div, .grid-cols-2 > div, .grid-cols-3 > div, .grid-cols-4 > div {
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.grid > div:hover, .grid-cols-2 > div:hover, .grid-cols-3 > div:hover, .grid-cols-4 > div:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(136, 192, 208, 0.15);
-}
-
-/* 页码指示器 */
-.slidev-page-count {
-  background: rgba(46, 52, 64, 0.7);
-  backdrop-filter: blur(8px);
-  padding: 4px 12px !important;
-  border-radius: 20px;
-  border: 1px solid rgba(136, 192, 208, 0.2);
-}
+.autocomplete-list { display: none !important; }
 </style>
 
-<div class="bottom-glow"></div>
 
-# OpenClaw 与 AI 实践
+# OpenClaw 与 AI 编程实践
 
 <p style="font-size:1.2rem;color:#94a3b8;margin-top:-0.5rem">
 前端开发者的 AI 提效指南
@@ -180,16 +46,6 @@ tbody tr:hover td {
     class="text-xl opacity-40 hover:opacity-80 transition-opacity !border-none !hover:text-white">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
   </a>
-</div>
-
----
-layout: center
----
-
-<div class="section-title text-center">
-  <div style="font-size:4rem;margin-bottom:0.5rem;opacity:0.3">✦</div>
-  <h1>OpenClaw</h1>
-  <h2>开源 AI 助手的「iPhone 时刻」</h2>
 </div>
 
 ---
@@ -260,69 +116,11 @@ layout: two-cols
 # GitHub Stars 增长趋势
 
 <div style="display:flex;justify-content:center;align-items:center;width:100%;margin-top:1rem">
-<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:740px">
-  <defs>
-    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#5e81ac"/>
-      <stop offset="100%" stop-color="#81a1c1"/>
-    </linearGradient>
-    <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="rgba(94,129,172,0.25)"/>
-      <stop offset="100%" stop-color="rgba(94,129,172,0.01)"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-
-  <!-- 网格线 -->
-  <line x1="80" y1="40" x2="80" y2="300" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <line x1="80" y1="105" x2="740" y2="105" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <line x1="80" y1="170" x2="740" y2="170" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <line x1="80" y1="235" x2="740" y2="235" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <line x1="80" y1="300" x2="740" y2="300" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-
-  <!-- Y轴标签 -->
-  <text x="72" y="44" fill="#64748b" font-size="11" text-anchor="end">250k</text>
-  <text x="72" y="109" fill="#64748b" font-size="11" text-anchor="end">200k</text>
-  <text x="72" y="174" fill="#64748b" font-size="11" text-anchor="end">150k</text>
-  <text x="72" y="239" fill="#64748b" font-size="11" text-anchor="end">100k</text>
-  <text x="72" y="304" fill="#64748b" font-size="11" text-anchor="end">50k</text>
-
-  <!-- X轴标签 -->
-  <text x="80" y="320" fill="#64748b" font-size="11" text-anchor="middle">1月</text>
-  <text x="195" y="320" fill="#64748b" font-size="11" text-anchor="middle">2月</text>
-  <text x="310" y="320" fill="#64748b" font-size="11" text-anchor="middle">3月</text>
-  <text x="425" y="320" fill="#64748b" font-size="11" text-anchor="middle">4月</text>
-  <text x="540" y="320" fill="#64748b" font-size="11" text-anchor="middle">5月</text>
-
-  <!-- 面积填充 -->
-  <path d="M80,300 L80,260 Q130,240 180,230 Q230,210 280,200 Q330,150 380,130 Q430,100 480,90 Q530,70 580,60 Q630,45 680,40 Q710,38 740,36 L740,300 Z"
-        fill="url(#areaGrad)"/>
-
-  <!-- 趋势线 -->
-  <polyline points="80,260 130,240 180,230 230,210 280,200 330,150 380,130 430,100 480,90 530,70 580,60 630,45 680,40 710,38 740,36"
-            fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
-
-  <!-- 数据点 -->
-  <circle cx="80" cy="260" r="4" fill="#5e81ac" stroke="#0f172a" stroke-width="2"/>
-  <circle cx="230" cy="210" r="4" fill="#5e81ac" stroke="#0f172a" stroke-width="2"/>
-  <circle cx="380" cy="130" r="5" fill="#81a1c1" stroke="#0f172a" stroke-width="2"/>
-  <circle cx="530" cy="70" r="5" fill="#81a1c1" stroke="#0f172a" stroke-width="2"/>
-  <circle cx="740" cy="36" r="6" fill="#88c0d0" stroke="#0f172a" stroke-width="2"/>
-
-  <!-- 里程碑标注 -->
-  <text x="80" y="252" fill="#5e81ac" font-size="10">🚀 发布 30k</text>
-  <text x="210" y="200" fill="#5e81ac" font-size="10">🔥 破 50k</text>
-  <text x="350" y="118" fill="#81a1c1" font-size="10">⚡ 破 100k</text>
-  <text x="500" y="58" fill="#81a1c1" font-size="10">💫 破 150k</text>
-  <text x="660" y="24" fill="#88c0d0" font-size="11" font-weight="bold">⭐ 200k+</text>
-</svg>
+<img src="/img/openclaw-stars.png" alt="GitHub Stars Growth" style="max-width:60%;height:auto;object-fit:contain"/>
 </div>
 
 <div style="text-align:center;margin-top:1rem;font-size:0.85rem;color:#64748b">
-  OpenClaw 仅用 120 天从 0 到 200k+ Stars，速度超越 Linux · Vue · React
+  OpenClaw 仅用 120 天从 0 到 200k+ Stars，超越 Linux · Vue · React
 </div>
 
 ---
@@ -386,7 +184,7 @@ openclaw gateway status # 确认服务运行
 
 ---
 layout: image-right
-image: /screenshots/关注3-频道.png
+image: /screenshots/ui首页.png
 backgroundSize: contain
 ---
 
