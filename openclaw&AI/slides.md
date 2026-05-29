@@ -1,11 +1,11 @@
 ---
 theme: default
 background: false
-title: OpenClaw 与 AI 编程实践
+title: OpenClaw 与 AI 实践
 titleTemplate: '%s'
 info: |
-  ## OpenClaw 与 AI 编程实践
-  前端开发者的 AI 提效指南
+  ## OpenClaw 与 AI 实践
+  小组培训 · 前端开发者的 AI 提效指南
 author: 阿虾的搭档
 presenter: true
 download: true
@@ -30,22 +30,60 @@ monaco: true
 # OpenClaw 与 AI 编程实践
 
 <p style="font-size:1.2rem;color:#94a3b8;margin-top:-0.5rem">
-前端开发者的 AI 提效指南
+主讲人：周涛
 </p>
 
-<div class="pt-8">
-  <span @click="$slidev.nav.next" class="px-6 py-3 rounded-full cursor-pointer text-sm"
-    style="background:linear-gradient(135deg,#5e81ac,#81a1c1);color:white;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 15px rgba(94,129,172,0.3)">
-    开始探索
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-  </span>
+---
+layout: center
+---
+
+# 演讲目录
+
+<div class="grid grid-cols-3 gap-8 mt-10">
+
+<div class="p-5 rounded-xl text-center" style="background:linear-gradient(135deg,rgba(163,190,140,0.15),rgba(163,190,140,0.04));border:1px solid rgba(163,190,140,0.3)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">🦐</div>
+  <h3 style="color:#a3be8c">Part 1</h3>
+  <p style="font-size:0.85rem;margin-top:0.3rem;color:#d8dee9">OpenClaw · Hermes · Agent</p>
+  <ul style="font-size:0.75rem;margin-top:0.5rem;color:#94a3b8;text-align:left">
+    <li>OpenClaw 介绍与安装</li>
+    <li>Hermes 执行引擎</li>
+    <li>Agent 概念与工具对比</li>
+  </ul>
 </div>
 
-<div class="abs-br m-6 flex gap-3">
-  <a href="https://github.com/openclaw/openclaw" target="_blank"
-    class="text-xl opacity-40 hover:opacity-80 transition-opacity !border-none !hover:text-white">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-  </a>
+<div class="p-5 rounded-xl text-center" style="background:linear-gradient(135deg,rgba(94,129,172,0.15),rgba(94,129,172,0.04));border:1px solid rgba(94,129,172,0.3)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">⌨️</div>
+  <h3 style="color:#81a1c1">Part 2</h3>
+  <p style="font-size:0.85rem;margin-top:0.3rem;color:#d8dee9">Claude Code 深度讲解</p>
+  <ul style="font-size:0.75rem;margin-top:0.5rem;color:#94a3b8;text-align:left">
+    <li>认知纠偏与核心能力</li>
+    <li>Skills · Rules · Hooks</li>
+    <li>Sub-Agents · Workflows · Memory</li>
+    <li>实操技巧总结</li>
+  </ul>
+</div>
+
+<div class="p-5 rounded-xl text-center" style="background:linear-gradient(135deg,rgba(235,203,139,0.15),rgba(235,203,139,0.04));border:1px solid rgba(235,203,139,0.3)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">💬</div>
+  <h3 style="color:#ebcb8b">Part 3</h3>
+  <p style="font-size:0.85rem;margin-top:0.3rem;color:#d8dee9">Q&A</p>
+  <ul style="font-size:0.75rem;margin-top:0.5rem;color:#94a3b8;text-align:left">
+    <li>问题答疑</li>
+    <li>使用经验分享</li>
+  </ul>
+</div>
+
+</div>
+
+---
+layout: center
+---
+
+<div class="section-title text-center">
+  <div style="font-size:4rem;margin-bottom:0.5rem;opacity:0.3">🦐</div>
+  <h1 style="font-size:2.5rem">Part 1</h1>
+  <h2 style="font-size:1.3rem;color:#94a3b8;margin-top:0.3rem">OpenClaw · Hermes · Agent 概念</h2>
 </div>
 
 ---
@@ -65,225 +103,196 @@ backgroundSize: contain
 ### ✨ 核心特性
 
 - 🧠 **多模型支持** — OpenAI / Claude / DeepSeek / 本地模型
-- 🔌 **多平台接入** — QQ / Discord / Telegram / Signal / Web
+- 🔌 **多平台接入** — QQ / Discord / Telegram / Web
 - 🛠 **可编程 Agent** — Skills / Hooks / Sub-Agents
 - 🔒 **本地优先** — 数据在自己手里
-- 🎨 **可视化控制台** — 开箱即用的 Web UI
-
----
-layout: two-cols
----
-
-# 为什么这么火？
-
-<div class="mt-4">
-
-### 🔥 120 天登顶 GitHub Stars 历史第一
-
-超过 Linux、Vue、React 等传奇项目
-
-</div>
-
-<div class="mt-6">
-
-### 📈 增速恐怖
-
-- 2025 年初发布
-- 不到 4 个月拿下 **200k+ Stars**
-- 社区活跃度空前
-
-</div>
-
-::right::
-
-<div class="ml-4 mt-12">
-  <div style="text-align:center;font-size:5rem;opacity:0.2">🚀</div>
-  <p style="text-align:center;font-size:0.85rem;color:#64748b">"开源 AI 领域的超级明星"</p>
-
-  <div class="mt-6 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(94,129,172,0.05));border:1px solid rgba(163,190,140,0.3)">
-    <div style="font-weight:bold;color:#a3be8c;margin-bottom:0.5rem">为什么开发者疯狂追捧？</div>
-    <ul style="font-size:0.85rem">
-      <li>✅ ChatGPT 平替，但完全可控</li>
-      <li>✅ 开发者体验极致</li>
-      <li>✅ 插件生态爆发式增长</li>
-      <li>✅ 社区驱动，透明度极高</li>
-    </ul>
-  </div>
-</div>
 
 ---
 
-# GitHub Stars 增长趋势
+# OpenClaw 安装与配置
 
-<div style="display:flex;justify-content:center;align-items:center;width:100%;margin-top:1rem">
-<img src="/img/openclaw-stars.png" alt="GitHub Stars Growth" style="max-width:60%;height:auto;object-fit:contain"/>
-</div>
+<br>
 
-<div style="text-align:center;margin-top:1rem;font-size:0.85rem;color:#64748b">
-  OpenClaw 仅用 120 天从 0 到 200k+ Stars，超越 Linux · Vue · React
-</div>
+官网地址：https://openclaw.ai
 
----
-layout: image-right
-image: /screenshots/关注1-安装方式.png
-backgroundSize: contain
----
+- 系统要求
 
-# 怎么安装？
+  - Node 24（推荐）或 Node 22.16+ - 安装脚本会自动处理这一点
+  - macOS、Linux 或 Windows - 支持原生 Windows 和 WSL2
 
-> 一句话：**一条命令搞定**
+- 安装
 
-### 🪟 Windows
-```bash
-winget install openclaw
-# 或
-scoop install openclaw
+```sh
+npm install -g openclaw@latest
+openclaw onboard --install-daemon
 ```
 
-### 🍎 macOS
-```bash
-brew install openclaw
-```
+<br>
 
-### 🐧 Linux
-```bash
-curl -fsSL https://get.openclaw.ai | bash
-```
+- 验证
 
-### 📦 Docker
-```bash
-docker run -d --name openclaw openclaw/openclaw
-```
-
----
-layout: image-right
-image: /screenshots/关注2-填写API key.png
-backgroundSize: contain
----
-
-# 配置与安全
-
-### 🔑 添加 API Key
-```bash
-openclaw config set provider openai key sk-xxx
-openclaw config set provider deepseek key sk-xxx
-```
-
-### ✅ 快速验证
 ```bash
 openclaw --version      # 确认 CLI 可用
 openclaw doctor         # 检查配置问题
-openclaw gateway status # 确认服务运行
 ```
 
-### 🔐 安全要点
-- 所有数据**本地存储**
-- 敏感信息支持 **SecretRef** 加密存储
-- 支持 **OAuth** 认证
-- 细粒度的权限控制
 
 ---
-layout: image-right
-image: /screenshots/ui首页.png
-backgroundSize: contain
----
 
-# 快速使用
+# OpenClaw 部署环境推荐
 
-### 🌐 控制台 UI
-访问 [http://127.0.0.1:18789](http://127.0.0.1:18789)
-- 由 Vite + Lit 构建的单页应用
-- 直接在浏览器上对话
-- 可视化配置管理
-
-### 📱 连接外部平台
-```bash
-openclaw channels add --channel qqbot --token "***"
-openclaw channels add --channel discord --token "***"
-openclaw channels add --channel telegram --token "***"
-```
-
-### 🎯 一个 Agent，多端联动
-> 写一次 Skill，QQ / Discord / Web 同步可用
-
----
-layout: image-right
-image: /screenshots/建议安装环境.png
-backgroundSize: contain
----
-
-# 建议环境配置
-
-### 硬件推荐
-| 配置项 | 最低要求 | 推荐配置 |
-|--------|---------|---------|
-| CPU | 4 核 | 8 核+ |
-| 内存 | 8GB | 16GB+ |
-| 存储 | 10GB | 50GB+ |
-
-### 软件推荐
-- **Node.js** ≥ 18.x（推荐 22.x LTS）
-- **npm** / **pnpm** 包管理器
-- **Git**（插件管理依赖）
-- Docker（可选，容器化部署）
-
-> 💡 纯 C2C（Chat to Code）模式，普通笔记本完全够用
-
----
-layout: center
----
-
-<div class="section-title text-center">
-  <h1>典型应用场景</h1>
+<div class="mt-6">
+  <table style="font-size:0.8rem;width:100%">
+    <thead>
+      <tr>
+        <th style="text-align:left">部署方式</th>
+        <th style="text-align:center">安全性</th>
+        <th style="text-align:left">适用场景</th>
+        <th style="text-align:center">操作门槛</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color:#a3be8c;font-weight:bold">✅ 用闲置旧电脑</td>
+        <td style="text-align:center;color:#a3be8c">高</td>
+        <td>手边有退役电脑</td>
+        <td style="text-align:center">低</td>
+      </tr>
+      <tr>
+        <td style="color:#88c0d0;font-weight:bold">✅ 虚拟机隔离（VMware/VirtualBox）</td>
+        <td style="text-align:center;color:#88c0d0">高</td>
+        <td>日常电脑，愿意装虚拟机</td>
+        <td style="text-align:center">中</td>
+      </tr>
+      <tr>
+        <td style="color:#8fbcbb;font-weight:bold">✅ 云服务器部署（阿里云、华为云）</td>
+        <td style="text-align:center;color:#8fbcbb">最高</td>
+        <td>需要24小时在线，愿意付费</td>
+        <td style="text-align:center">中</td>
+      </tr>
+      <tr>
+        <td style="color:#ebcb8b;font-weight:bold">✅ Docker 容器隔离</td>
+        <td style="text-align:center;color:#ebcb8b">较高</td>
+        <td>熟悉容器技术</td>
+        <td style="text-align:center">中高</td>
+      </tr>
+      <tr>
+        <td style="color:#bf616a;font-weight:bold">❌ 直接装在日常电脑上</td>
+        <td style="text-align:center;color:#bf616a">低</td>
+        <td style="color:#bf616a">不推荐</td>
+        <td style="text-align:center">低</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<div class="grid grid-cols-3 gap-5 mt-6">
-
-<div class="p-5 rounded-xl text-center" style="background:linear-gradient(135deg,rgba(94,129,172,0.12),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
-  <div style="font-size:2.5rem;margin-bottom:0.5rem">👨‍💻</div>
-  <h4 style="color:#88c0d0;margin:0">队友编程</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">日常编码辅助<br>Code Review<br>Debug 协作</p>
-</div>
-
-<div class="p-5 rounded-xl text-center" style="background:linear-gradient(135deg,rgba(180,142,173,0.12),rgba(180,142,173,0.03));border:1px solid rgba(180,142,173,0.25)">
-  <div style="font-size:2.5rem;margin-bottom:0.5rem">📱</div>
-  <h4 style="color:#b48ead;margin:0">AI 账号赛道</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">公众号自动生成<br>小红书/知乎运营<br>B站脚本写作</p>
-</div>
-
-<div class="p-5 rounded-xl text-center" style="background:linear-gradient(135deg,rgba(208,135,112,0.12),rgba(208,135,112,0.03));border:1px solid rgba(208,135,112,0.25)">
-  <div style="font-size:2.5rem;margin-bottom:0.5rem">🤖</div>
-  <h4 style="color:#d08770;margin:0">自动化工作流</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">定时任务<br>信息聚合<br>智能提醒</p>
-</div>
-
-</div>
-
-<div class="mt-6 p-4 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(235,203,139,0.1),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
-  <strong style="color:#ebcb8b">🎯 OpenClaw 定位：</strong>不是 Chatbot，是你的 <strong style="color:#ebcb8b">AI 操作系统</strong>
+<div class="mt-6 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(191,97,106,0.1),rgba(191,97,106,0.03));border:1px solid rgba(191,97,106,0.25)">
+  <h4 style="color:#bf616a">⚠️ 为什么不推荐直接装在日常电脑？</h4>
+  <p style="font-size:0.85rem;margin-top:0.3rem;color:#94a3b8">OpenClaw 需要常驻运行，直接装在日常电脑会占用系统资源、增加安全风险，且重启后需要手动恢复服务</p>
 </div>
 
 ---
-layout: center
+
+# OpenClaw 多 Agent
+
+> 多个 Agent 协同工作，每个 Agent 专注一个领域
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.12),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
+  <h4 style="color:#88c0d0">🤖 工作模式</h4>
+  <div class="mt-3 p-3 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#94a3b8">
+<pre>
+用户指令
+    ↓
+主 Agent（调度中心）
+    ├── Agent A（需求分析）→ 输出需求文档
+    ├── Agent B（代码编写）→ 输出代码实现
+    └── Agent C（运维监控）→ 输出运行报告
+    ↓
+结果汇总 → 推送到 QQ / Discord / Web</pre>
+  </div>
+  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">写一次 Skill，多端同步可用</p>
+</div>
+
+<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.12),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">✨ 核心优势</h4>
+  <ul style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li>**分工协作** — 每个 Agent 专注擅长的领域</li>
+    <li>**并行执行** — 多个任务同时处理</li>
+    <li>**多端联动** — QQ / Discord / Web 同步响应</li>
+    <li>**定时触发** — 自动执行周期性任务</li>
+  </ul>
+  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#88c0d0">
+    视频演示 → https://www.bilibili.com/video/BV1HxQSBgEvC
+  </div>
+</div>
+
+</div>
+
 ---
 
-<div class="section-title text-center">
-  <div style="font-size:4rem;margin-bottom:0.5rem;opacity:0.3">✦</div>
-  <h1>Hermes</h1>
-  <h2>让 Agent 拥有「手」和「眼睛」</h2>
+# OpenClaw 使用场景
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.12),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
+  <h4 style="color:#88c0d0">👨‍💻 项目开发</h4>
+  <p style="font-size:0.85rem;margin-top:0.3rem;color:#94a3b8">多 Agent 协作，覆盖开发全流程</p>
+  <div class="mt-3">
+    <div class="flex items-center gap-2" style="font-size:0.8rem;color:#94a3b8">
+      <span class="px-2 py-1 rounded" style="background:rgba(94,129,172,0.15);color:#88c0d0;font-size:0.7rem">Agent 1</span>
+      <span>需求分析 — 理解需求、拆分任务</span>
+    </div>
+    <div class="mt-2 flex items-center gap-2" style="font-size:0.8rem;color:#94a3b8">
+      <span class="px-2 py-1 rounded" style="background:rgba(163,190,140,0.15);color:#a3be8c;font-size:0.7rem">Agent 2</span>
+      <span>代码编写 — 实现功能、编写测试</span>
+    </div>
+    <div class="mt-2 flex items-center gap-2" style="font-size:0.8rem;color:#94a3b8">
+      <span class="px-2 py-1 rounded" style="background:rgba(180,142,173,0.15);color:#b48ead;font-size:0.7rem">Agent 3</span>
+      <span>运维监控 — 日志分析、故障排查</span>
+    </div>
+  </div>
+</div>
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.12),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">📱 自动化工作</h4>
+  <p style="font-size:0.85rem;margin-top:0.3rem;color:#94a3b8">定时账号运营助手，7×24 自动运转</p>
+  <div class="mt-3">
+    <div class="flex items-center gap-2" style="font-size:0.8rem;color:#94a3b8">
+      <span class="px-2 py-1 rounded" style="background:rgba(235,203,139,0.15);color:#ebcb8b;font-size:0.7rem">采集</span>
+      <span>定时抓取热点信息、行业动态</span>
+    </div>
+    <div class="mt-2 flex items-center gap-2" style="font-size:0.8rem;color:#94a3b8">
+      <span class="px-2 py-1 rounded" style="background:rgba(208,135,112,0.15);color:#d08770;font-size:0.7rem">发布</span>
+      <span>自动生成内容、定时推送到各平台</span>
+    </div>
+    <div class="mt-2 flex items-center gap-2" style="font-size:0.8rem;color:#94a3b8">
+      <span class="px-2 py-1 rounded" style="background:rgba(143,188,187,0.15);color:#8fbcbb;font-size:0.7rem">维护</span>
+      <span>活跃度维护、评论互动、数据统计</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="mt-4 p-3 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(235,203,139,0.1),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
+  <strong style="color:#ebcb8b">🎯 定位：</strong>不是 Chatbot，是你的 <strong style="color:#ebcb8b">AI 操作系统</strong>
 </div>
 
 ---
 layout: two-cols
 ---
 
-# Hermes 是什么？
+# Hermes
 
-> **Agent 执行引擎** — 让 AI 不只「会说」，更能「会做」
+> 让 AI 从「会说」到「会做」
+
+<br>
 
 ### 核心能力
 
-🧩 **工具调用** — 让 AI 调用 API、读文件、写代码
+🧩 **工具调用** — 调用 API、读文件、写代码
 
 👀 **视觉识别** — 看懂截图、UI、流程图
 
@@ -291,224 +300,58 @@ layout: two-cols
 
 📋 **文件系统** — 读写本地文件
 
-💬 **多轮交互** — 复杂任务分步执行
-
 ::right::
 
-<div class="ml-4 mt-12 p-6 rounded-xl" style="background:linear-gradient(135deg,rgba(136,192,208,0.15),rgba(136,192,208,0.04));border:1px solid rgba(136,192,208,0.3)">
-  <h3 style="color:#88c0d0">⚡ 一句话总结</h3>
-  <p style="margin-top:0.75rem">Hermes 是 OpenClaw 的 <strong>「操作系统」</strong></p>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">它把 AI 从聊天框里解放出来，<br>让 Agent 真正能 <strong>动手干活</strong></p>
+<div class="ml-4 mt-6">
+
+<div class="p-4 rounded-xl" style="background:linear-gradient(135deg,rgba(136,192,208,0.15),rgba(136,192,208,0.04));border:1px solid rgba(136,192,208,0.3)">
+  <h4 style="color:#88c0d0">⚡ vs OpenClaw</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem">OpenClaw = <strong>框架/操作系统</strong><br>Hermes = <strong>执行引擎</strong></p>
+  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">OpenClaw 负责调度，Hermes 负责执行</p>
 </div>
 
-<div class="ml-4 mt-6 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(100,116,139,0.1),rgba(100,116,139,0.03));border:1px solid rgba(100,116,139,0.25)">
-  <p style="font-size:0.8rem;color:#64748b;margin:0">类比理解：</p>
-  <p style="font-size:0.85rem;margin-top:0.3rem">ChatGPT → 只会说话的知识分子<br>
-Hermes → 既能说话又能动手的工程师</p>
+<div class="mt-4 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">🦐 养虾 + 养马</h4>
+  <p style="font-size:0.85rem;margin-top:0.3rem;color:#94a3b8">互相驱动、辅助<br>自主进化（自动沉淀 skill）</p>
+</div>
+
 </div>
 
 ---
 
-# Hermes 的典型能力
+# Agent 概念与工具对比
 
-<div class="grid grid-cols-2 gap-4 mt-6">
-
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.12),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
-  <h4 style="color:#a3be8c">🔧 代码执行</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">在沙箱中运行 Python/Node.js，安装依赖，处理数据</p>
-</div>
+<div class="grid grid-cols-2 gap-6 mt-4">
 
 <div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.12),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
-  <h4 style="color:#81a1c1">🌐 网页访问</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">抓取网页内容，提交表单，API 调用，数据采集</p>
+  <h4 style="color:#88c0d0">🤖 Agent 是什么？</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">感知 → 决策 → 执行 → 反馈</p>
+  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#94a3b8">
+    Workflow = 固定路径（流水线）<br>
+    Agent = 自主决策（智能体）
+  </div>
 </div>
 
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(180,142,173,0.12),rgba(180,142,173,0.03));border:1px solid rgba(180,142,173,0.25)">
-  <h4 style="color:#b48ead">📁 文件操作</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">读写文件、搜索代码库、管理项目结构</p>
-</div>
-
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(208,135,112,0.12),rgba(208,135,112,0.03));border:1px solid rgba(208,135,112,0.25)">
-  <h4 style="color:#d08770">🖼️ 视觉理解</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">分析 UI 截图、流程图、手绘图 → 生成代码</p>
-</div>
-
-</div>
-
-<div class="mt-8 p-4 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(143,188,187,0.1),rgba(143,188,187,0.05));border:1px solid rgba(143,188,187,0.25)">
-  <h4 style="color:#8fbcbb">🔄 编排能力是关键</h4>
-  <p style="font-size:0.85rem;margin-top:0.3rem;color:#94a3b8">复杂的任务需要多个工具协同完成，Hermes 的优势在于工具的编排组合</p>
-</div>
-
----
-
-# Hermes 使用场景
-
-<div class="grid grid-cols-3 gap-4 mt-6">
-
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06)">
-  <div style="font-size:2rem;margin-bottom:0.25rem">🎨</div>
-  <h4 style="color:#d8dee9;font-size:0.95rem">视觉稿还原</h4>
-  <p style="font-size:0.8rem;color:#64748b;margin-top:0.3rem">截图给 Agent → 自动生成对应前端代码</p>
-</div>
-
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06)">
-  <div style="font-size:2rem;margin-bottom:0.25rem">🐛</div>
-  <h4 style="color:#d8dee9;font-size:0.95rem">自动 Debug</h4>
-  <p style="font-size:0.8rem;color:#64748b;margin-top:0.3rem">描述 bug → 搜代码 → 定位 → 修复</p>
-</div>
-
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06)">
-  <div style="font-size:2rem;margin-bottom:0.25rem">📊</div>
-  <h4 style="color:#d8dee9;font-size:0.95rem">数据分析</h4>
-  <p style="font-size:0.8rem;color:#64748b;margin-top:0.3rem">丢个 CSV → 自动分析 → 生成可视化图表</p>
-</div>
-
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06)">
-  <div style="font-size:2rem;margin-bottom:0.25rem">📝</div>
-  <h4 style="color:#d8dee9;font-size:0.95rem">文档生成</h4>
-  <p style="font-size:0.8rem;color:#64748b;margin-top:0.3rem">扫代码 → 自动生成 API 文档、README</p>
-</div>
-
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06)">
-  <div style="font-size:2rem;margin-bottom:0.25rem">🌙</div>
-  <h4 style="color:#d8dee9;font-size:0.95rem">定时任务</h4>
-  <p style="font-size:0.8rem;color:#64748b;margin-top:0.3rem">每天早上 9 点 → 汇总信息 → 推送到手机</p>
-</div>
-
-<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06)">
-  <div style="font-size:2rem;margin-bottom:0.25rem">🔗</div>
-  <h4 style="color:#d8dee9;font-size:0.95rem">API 集成</h4>
-  <p style="font-size:0.8rem;color:#64748b;margin-top:0.3rem">接入内部系统 → 自然语言运维操作</p>
-</div>
-
-</div>
-
----
-layout: center
----
-
-<div class="section-title text-center">
-  <div style="font-size:4rem;margin-bottom:0.5rem;opacity:0.3">✦</div>
-  <h1>Agent 工具</h1>
-  <h2>横向对比</h2>
-</div>
-
----
-
-# 主流 AI Agent 工具对比
-
-<div class="mt-6">
-  <table>
+<div class="p-4 rounded-lg" style="border:1px solid rgba(100,116,139,0.25)">
+  <h4 style="color:#94a3b8">🔍 工具横向对比</h4>
+  <table style="font-size:0.75rem;margin-top:0.5rem;width:100%">
     <thead>
-      <tr>
-        <th>工具</th>
-        <th>定位</th>
-        <th>核心能力</th>
-        <th>价格</th>
-        <th>适用场景</th>
-      </tr>
+      <tr><th>工具</th><th>定位</th></tr>
     </thead>
     <tbody>
-      <tr>
-        <td style="font-weight:bold;color:#a3be8c">OpenClaw</td>
-        <td>全能 AI 框架</td>
-        <td>多平台 + Agent + 自动化</td>
-        <td>免费开源</td>
-        <td>个人/团队全能助手</td>
-      </tr>
-      <tr>
-        <td style="font-weight:bold;color:#81a1c1">Claude Code</td>
-        <td>终端编程助手</td>
-        <td>深度代码理解 + 自动编辑</td>
-        <td>按 Token 付费</td>
-        <td>专业编程</td>
-      </tr>
-      <tr>
-        <td style="font-weight:bold;color:#b48ead">Codex</td>
-        <td>IDE 插件</td>
-        <td>代码补全 + 对话</td>
-        <td>按月订阅</td>
-        <td>日常编码辅助</td>
-      </tr>
-      <tr>
-        <td style="font-weight:bold;color:#d08770">Cursor</td>
-        <td>AI IDE</td>
-        <td>原生 AI 编辑器</td>
-        <td>按月订阅</td>
-        <td>AI First 开发</td>
-      </tr>
-      <tr>
-        <td style="font-weight:bold;color:#8fbcbb">Cline</td>
-        <td>VS Code 插件</td>
-        <td>终端 + 编辑器集成</td>
-        <td>BYOK</td>
-        <td>VS Code 增强</td>
-      </tr>
+      <tr><td style="color:#a3be8c;font-weight:bold">OpenClaw</td><td>调度agent</td></tr>
+      <tr><td style="color:#81a1c1;font-weight:bold">Claude Code</td><td>终端编程</td></tr>
+      <tr><td style="color:#b48ead;font-weight:bold">Codex</td><td>IDE插件</td></tr>
+      <tr><td style="color:#d08770;font-weight:bold">Cursor</td><td>AI IDE</td></tr>
+      <tr><td style="color:#8fbcbb;font-weight:bold">Cline</td><td>VS Code</td></tr>
     </tbody>
   </table>
 </div>
 
-<div class="mt-6 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(235,203,139,0.1),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
-  <h4 style="color:#ebcb8b">💡 选型建议</h4>
-  <p style="font-size:0.85rem;margin-top:0.3rem">不是非此即彼！<strong>OpenClaw + Claude Code + Cursor</strong> 是很多开发者的黄金组合</p>
-  <p style="font-size:0.8rem;margin-top:0.2rem;color:#94a3b8">OpenClaw 负责流程自动化，Claude Code 负责深度编码，Cursor 负责日常编写</p>
 </div>
 
----
-
-# 工具定位对比速览
-
-<div class="grid grid-cols-4 gap-3 mt-6">
-
-<div class="p-3 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(163,190,140,0.12),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.3)">
-  <div style="font-size:2rem">🏗️</div>
-  <h4 style="color:#a3be8c;font-size:0.85rem;margin-top:0.25rem">OpenClaw</h4>
-  <p style="font-size:0.75rem;color:#64748b;margin-top:0.2rem">AI 框架<br>自动化引擎</p>
-</div>
-
-<div class="p-3 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(96,165,250,0.12),rgba(96,165,250,0.03));border:1px solid rgba(96,165,250,0.3)">
-  <div style="font-size:2rem">⌨️</div>
-  <h4 style="color:#81a1c1;font-size:0.85rem;margin-top:0.25rem">Claude Code</h4>
-  <p style="font-size:0.75rem;color:#64748b;margin-top:0.2rem">终端编程<br>深度 Agent</p>
-</div>
-
-<div class="p-3 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(192,132,252,0.12),rgba(192,132,252,0.03));border:1px solid rgba(192,132,252,0.3)">
-  <div style="font-size:2rem">📝</div>
-  <h4 style="color:#b48ead;font-size:0.85rem;margin-top:0.25rem">Codex</h4>
-  <p style="font-size:0.75rem;color:#64748b;margin-top:0.2rem">补全增强<br>轻量助手</p>
-</div>
-
-<div class="p-3 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(208,135,112,0.12),rgba(208,135,112,0.03));border:1px solid rgba(208,135,112,0.3)">
-  <div style="font-size:2rem">🖥️</div>
-  <h4 style="color:#d08770;font-size:0.85rem;margin-top:0.25rem">Cursor</h4>
-  <p style="font-size:0.75rem;color:#64748b;margin-top:0.2rem">AI 原生 IDE<br>极致体验</p>
-</div>
-
-</div>
-
-<div class="mt-8 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.1),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
-  <h4 style="color:#88c0d0">🔍 关键区别</h4>
-  <div class="grid grid-cols-2 gap-4 mt-2" style="font-size:0.85rem">
-    <div>
-      <p><strong>OpenClaw</strong> 能做 Agent 无法做的事：</p>
-      <ul style="font-size:0.8rem;color:#94a3b8;margin-top:0.3rem">
-        <li>✓ QQ、Discord 等多平台收发</li>
-        <li>✓ 定时自动执行任务</li>
-        <li>✓ 跨平台消息联动</li>
-        <li>✓ 自己的 AI 机器人</li>
-      </ul>
-    </div>
-    <div>
-      <p><strong>编程 Agent</strong> 专注代码场景：</p>
-      <ul style="font-size:0.8rem;color:#94a3b8;margin-top:0.3rem">
-        <li>✓ 深度代码理解</li>
-        <li>✓ 编辑器深度集成</li>
-        <li>✓ 项目级重构</li>
-        <li>✓ Terminal 原生体验</li>
-      </ul>
-    </div>
-  </div>
+<div class="mt-4 p-3 rounded-lg" style="background:linear-gradient(135deg,rgba(235,203,139,0.1),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
+  <strong style="color:#ebcb8b">💡 选型建议：</strong>独立项目开发、运营 — <strong>OpenClaw</strong>（自动化）+ <strong>Claude Code</strong>（深度编码）
 </div>
 
 ---
@@ -517,19 +360,51 @@ layout: center
 
 <div class="section-title text-center">
   <div style="font-size:4rem;margin-bottom:0.5rem;opacity:0.3">✦</div>
-  <h1>Claude Code</h1>
-  <h2 style="font-size:1.1rem;color:#94a3b8">目前公司可用 · 最主流的 AI 编程 Agent</h2>
+  <h1 style="font-size:2.5rem">Part 2</h1>
+  <h2 style="font-size:1.3rem;color:#94a3b8;margin-top:0.3rem">Claude Code 深度讲解</h2>
+  </div>
+
+---
+
+# Claude Code ≠ Claude 模型
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(191,97,106,0.1),rgba(191,97,106,0.03));border:1px solid rgba(191,97,106,0.25)">
+  <h4 style="color:#bf616a">❌ 常见误区</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">很多人以为 Claude Code 就是 Claude 模型的聊天界面</p>
+  <div class="mt-3 p-3 rounded" style="background:rgba(0,0,0,0.3);font-size:0.8rem;color:#bf616a">
+    "Claude Code = 用 Claude 聊天？" → <strong>错！</strong>
+  </div>
+</div>
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">✅ 正确理解</h4>
+  <div class="mt-3">
+    <div class="p-3 rounded" style="background:rgba(0,0,0,0.2);font-size:0.85rem">
+      <p><strong style="color:#88c0d0">Claude 模型</strong> = 大语言模型（对话能力）</p>
+      <p style="color:#64748b;font-size:0.8rem;margin-top:0.2rem">→ 只有「大脑」，能思考但无法行动</p>
+    </div>
+    <div class="mt-2 p-3 rounded" style="background:rgba(0,0,0,0.2);font-size:0.85rem">
+      <p><strong style="color:#a3be8c">Claude Code</strong> = 终端 AI 编程 Agent（行动能力）</p>
+      <p style="color:#64748b;font-size:0.8rem;margin-top:0.2rem">→ 大脑 + 手脚，能思考还能动手干活</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="mt-4 p-3 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(235,203,139,0.1),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
+  <strong style="color:#ebcb8b">类比：</strong>Claude 模型 = 只会说话的知识分子 · Claude Code = 既能说话又能动手的工程师
 </div>
 
 ---
 
-# Claude Code 是什么？
+# Claude Code 核心能力
 
 > Anthropic 推出的 **终端 AI 编程 Agent**，直接在你的命令行里工作
 
-<br>
-
-<div class="grid grid-cols-2 gap-6">
+<div class="grid grid-cols-2 gap-6 mt-6">
 
 <div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.12),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
   <h4 style="color:#88c0d0">✨ 核心能力</h4>
@@ -549,110 +424,298 @@ layout: center
     <li>✅ 指令式编程体验流畅</li>
     <li>✅ 熟悉代码库速度极快</li>
     <li>✅ 多人协作场景友好</li>
-    <li>✅ 结合 OpenClaw 效果翻倍</li>
+    <li>✅ Skills/Hooks/Rules 可定制</li>
   </ul>
 </div>
 
+</div>
+
+<div class="mt-4 p-3 rounded-lg text-center" style="background:rgba(0,0,0,0.2)">
+  <span style="font-size:0.85rem;color:#64748b">介绍视频 → </span>
+  <span style="font-size:0.85rem;color:#88c0d0">https://www.bilibili.com/video/BV1kX546QEjG</span>
 </div>
 
 ---
 
-# Claude Code 核心三件套
+# Claude Code 核心四件套
 
-### Skills · Hooks · Sub-Agents
+### Skills · Rules · Hooks · Sub-Agents
 
-<div class="grid grid-cols-3 gap-6 mt-6">
+<div class="grid grid-cols-4 gap-4 mt-6">
 
-<div class="p-5 rounded-xl" style="background:linear-gradient(180deg,rgba(180,142,173,0.18),rgba(180,142,173,0.04));border:1px solid rgba(180,142,173,0.3)">
-  <div style="font-size:2.5rem;margin-bottom:0.5rem">🧩</div>
-  <h3 style="color:#b48ead">Skills</h3>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">可复用的能力模块</p>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8">
-    <li>封装特定技能</li>
-    <li>一次编写，处处使用</li>
-    <li>可共享、可版本管理</li>
-  </ul>
-  <div class="mt-4 p-2 rounded" style="background:rgba(180,142,173,0.08);font-size:0.75rem;font-family:monospace;color:#88c0d0">
-    → "帮我写个 React 组件"
+<div class="p-4 rounded-xl" style="background:linear-gradient(180deg,rgba(180,142,173,0.18),rgba(180,142,173,0.04));border:1px solid rgba(180,142,173,0.3)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">🧩</div>
+  <h3 style="color:#b48ead;font-size:1rem">Skills</h3>
+  <p style="font-size:0.75rem;margin-top:0.3rem;color:#94a3b8">可复用的能力模块<br>按需调用</p>
+  <div class="mt-3 p-2 rounded" style="background:rgba(180,142,173,0.08);font-size:0.7rem;font-family:monospace;color:#88c0d0">
+    → 工具箱（按需取用）
   </div>
 </div>
 
-<div class="p-5 rounded-xl" style="background:linear-gradient(180deg,rgba(143,188,187,0.18),rgba(143,188,187,0.04));border:1px solid rgba(34,211,238,0.3)">
-  <div style="font-size:2.5rem;margin-bottom:0.5rem">🪝</div>
-  <h3 style="color:#8fbcbb">Hooks</h3>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">事件触发机制</p>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8">
-    <li>在关键节点插入逻辑</li>
-    <li>自动预处理/后处理</li>
-    <li>构建工作流流水线</li>
-  </ul>
-  <div class="mt-4 p-2 rounded" style="background:rgba(143,188,187,0.08);font-size:0.75rem;font-family:monospace;color:#8fbcbb">
-    → "提交前自动检查 lint"
+<div class="p-4 rounded-xl" style="background:linear-gradient(180deg,rgba(235,203,139,0.18),rgba(235,203,139,0.04));border:1px solid rgba(251,191,36,0.3)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">📋</div>
+  <h3 style="color:#ebcb8b;font-size:1rem">Rules</h3>
+  <p style="font-size:0.75rem;margin-top:0.3rem;color:#94a3b8">持久化规则<br>始终生效</p>
+  <div class="mt-3 p-2 rounded" style="background:rgba(235,203,139,0.08);font-size:0.7rem;font-family:monospace;color:#ebcb8b">
+    → 公司制度（自动遵守）
   </div>
 </div>
 
-<div class="p-5 rounded-xl" style="background:linear-gradient(180deg,rgba(235,203,139,0.18),rgba(235,203,139,0.04));border:1px solid rgba(251,191,36,0.3)">
-  <div style="font-size:2.5rem;margin-bottom:0.5rem">👥</div>
-  <h3 style="color:#ebcb8b">Sub-Agents</h3>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">子任务代理</p>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8">
-    <li>拆分复杂任务</li>
-    <li>并行执行子任务</li>
-    <li>独立上下文互不干扰</li>
-  </ul>
-  <div class="mt-4 p-2 rounded" style="background:rgba(235,203,139,0.08);font-size:0.75rem;font-family:monospace;color:#ebcb8b">
-    → "Agent A 写前端，Agent B 写后端"
+<div class="p-4 rounded-xl" style="background:linear-gradient(180deg,rgba(143,188,187,0.18),rgba(143,188,187,0.04));border:1px solid rgba(34,211,238,0.3)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">🧲</div>
+  <h3 style="color:#8fbcbb;font-size:1rem">Hooks</h3>
+  <p style="font-size:0.75rem;margin-top:0.3rem;color:#94a3b8">事件触发机制<br>自动预处理</p>
+  <div class="mt-3 p-2 rounded" style="background:rgba(143,188,187,0.08);font-size:0.7rem;font-family:monospace;color:#8fbcbb">
+    → 事件监听器
   </div>
 </div>
 
+<div class="p-4 rounded-xl" style="background:linear-gradient(180deg,rgba(208,135,112,0.18),rgba(208,135,112,0.04));border:1px solid rgba(208,135,112,0.3)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">👥</div>
+  <h3 style="color:#d08770;font-size:1rem">Sub-Agents</h3>
+  <p style="font-size:0.75rem;margin-top:0.3rem;color:#94a3b8">子任务代理<br>并行执行</p>
+  <div class="mt-3 p-2 rounded" style="background:rgba(208,135,112,0.08);font-size:0.7rem;font-family:monospace;color:#d08770">
+    → 团队分工
+  </div>
+</div>
+
+</div>
+
+<div class="mt-6 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.08),rgba(180,142,173,0.08),rgba(143,188,187,0.08),rgba(235,203,139,0.08));border:1px solid rgba(100,116,139,0.25)">
+  <p style="font-size:0.85rem;color:#d8dee9;text-align:center">
+    <strong style="color:#b48ead">Skills</strong> 按需调用 · <strong style="color:#ebcb8b">Rules</strong> 自动遵守 · <strong style="color:#8fbcbb">Hooks</strong> 事件触发 · <strong style="color:#d08770">Sub-Agents</strong> 并行分工
+  </p>
+</div>
+
+---
+layout: center
+---
+
+<div class="section-title text-center">
+  <div style="font-size:3rem;margin-bottom:0.3rem;opacity:0.3">🧩</div>
+  <h1 style="font-size:2rem">Skills 深度解析</h1>
+  <h2 style="font-size:1rem;color:#94a3b8;margin-top:0.3rem">AI 的「可编程能力」</h2>
 </div>
 
 ---
 
-# Skills 深度解析
+# Skills 是什么？
 
-> **Skills = AI 的「可编程能力」**，让 Agent 掌握特定领域的专业知识
+> **Skills = AI 的「可复用指令模块」**，类比 npm 包
 
 <div class="grid grid-cols-2 gap-6 mt-6">
 
 <div class="p-4 rounded-lg" style="border:1px solid rgba(180,142,173,0.25)">
-  <h4 style="color:#b48ead">📦 Skill 是什么？</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem">一个 Skill 是一个 <strong>可复用的指令模块</strong></p>
-  <ul style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">
-    <li>包含：提示词 + 工具定义 + 约束条件</li>
-    <li>可以是单个 prompt，也可以是一套完整的工作流</li>
-    <li>支持参数化输入</li>
+  <h4 style="color:#b48ead">📦 Skill 组成</h4>
+  <ul style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li><strong>提示词</strong> — 核心指令和上下文</li>
+    <li><strong>工具定义</strong> — 可调用的外部能力</li>
+    <li><strong>约束条件</strong> — 输入输出规范</li>
   </ul>
+  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#94a3b8">
+    一次编写 → 处处使用 → 可共享 → 可版本管理
+  </div>
 </div>
 
 <div class="p-4 rounded-lg" style="border:1px solid rgba(180,142,173,0.25)">
   <h4 style="color:#b48ead">🎯 前端常用 Skill 示例</h4>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
-    <li><code style="color:#88c0d0">react-component-gen</code> — 根据需求生成 React 组件</li>
-    <li><code style="color:#88c0d0">css-to-tailwind</code> — 普通 CSS 转 Tailwind 类名</li>
-    <li><code style="color:#88c0d0">api-doc-gen</code> — 从代码生成 API 文档</li>
+  <ul style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li><code style="color:#88c0d0">react-component-gen</code> — 生成 React 组件</li>
+    <li><code style="color:#88c0d0">css-to-tailwind</code> — CSS 转 Tailwind</li>
     <li><code style="color:#88c0d0">unit-test-gen</code> — 自动生成单元测试</li>
     <li><code style="color:#88c0d0">code-review</code> — 代码审查模板</li>
+    <li><code style="color:#88c0d0">hui</code> — HUI 组件库规范（公司内部）</li>
   </ul>
 </div>
 
 </div>
 
-<div class="mt-6 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(180,142,173,0.1),rgba(180,142,173,0.03));border:1px solid rgba(180,142,173,0.25)">
-  <h4 style="color:#b48ead">💡 最佳实践</h4>
-  <p style="font-size:0.85rem;margin-top:0.3rem">把团队常用的编码模式、项目规范写成 Skill，新人上手速度翻倍</p>
+---
+
+# SkillHub — Skill 的管理平台
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(191,97,106,0.1),rgba(191,97,106,0.03));border:1px solid rgba(191,97,106,0.25)">
+  <h4 style="color:#bf616a">🌐 外网 SkillHub</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">https://www.skillhub.club/</p>
+  <div class="mt-3 p-3 rounded" style="background:rgba(191,97,106,0.08);font-size:0.8rem;color:#bf616a">
+    ⚠️ 注意隐私泄露安全！不要上传包含内部信息的 Skill
+  </div>
+</div>
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">🏢 公司内部 SkillHub</h4>
+  <ul style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li>部门内：http://10.19.157.15:18080/</li>
+    <li>MaaS：https://maas.hikvision.com.cn/maas/#/apply/Skillhub</li>
+  </ul>
+  <div class="mt-3 p-3 rounded" style="background:rgba(163,190,140,0.08);font-size:0.8rem;color:#a3be8c">
+    ✅ 内部 Skill 安全可控，推荐优先使用
+  </div>
+</div>
+
 </div>
 
 ---
 
-# Hooks 深度解析
+# Skill 制作方法
+
+<div class="grid grid-cols-3 gap-5 mt-6">
+
+<div class="p-5 rounded-xl" style="background:linear-gradient(135deg,rgba(94,129,172,0.12),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">💬</div>
+  <h4 style="color:#88c0d0">方式一</h4>
+  <p style="font-size:0.9rem;margin-top:0.3rem;color:#d8dee9;font-weight:bold">让 Claude Code 帮你制作</p>
+  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">日常开发中遇到重复模式，直接让 CC 封装成 Skill</p>
+  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.7rem;font-family:monospace;color:#88c0d0">
+    "帮我把这个组件生成逻辑封装成 skill"
+  </div>
+</div>
+
+<div class="p-5 rounded-xl" style="background:linear-gradient(135deg,rgba(163,190,140,0.12),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">📄</div>
+  <h4 style="color:#a3be8c">方式二</h4>
+  <p style="font-size:0.9rem;margin-top:0.3rem;color:#d8dee9;font-weight:bold">从已有文档制作</p>
+  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">把团队积累的规范文档、编码模式直接转为 Skill</p>
+  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.7rem;font-family:monospace;color:#a3be8c">
+    HUI 规范 → hui skill
+  </div>
+</div>
+
+<div class="p-5 rounded-xl" style="background:linear-gradient(135deg,rgba(180,142,173,0.12),rgba(180,142,173,0.03));border:1px solid rgba(180,142,173,0.25)">
+  <div style="font-size:2rem;margin-bottom:0.3rem">🔧</div>
+  <h4 style="color:#b48ead">方式三</h4>
+  <p style="font-size:0.9rem;margin-top:0.3rem;color:#d8dee9;font-weight:bold">skill-creator 制作</p>
+  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">使用 skill-creator skill，专业化的创建流程</p>
+  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.7rem;font-family:monospace;color:#b48ead">
+    /skill-creator → 交互式引导
+  </div>
+</div>
+
+</div>
+
+---
+
+# Skill 发布
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-4 rounded-lg" style="border:1px solid rgba(180,142,173,0.25)">
+  <h4 style="color:#b48ead">📦 发布流程</h4>
+  <div class="mt-3">
+    <div style="font-size:0.85rem;color:#94a3b8" class="space-y-3">
+      <div class="flex items-center gap-3">
+        <span class="px-2 py-1 rounded text-sm" style="background:rgba(180,142,173,0.15);color:#b48ead">1</span>
+        <span>本地测试 — 确保 Skill 正常工作</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="px-2 py-1 rounded text-sm" style="background:rgba(180,142,173,0.15);color:#b48ead">2</span>
+        <span>打包 — 生成可分发格式</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="px-2 py-1 rounded text-sm" style="background:rgba(180,142,173,0.15);color:#b48ead">3</span>
+        <span>发布到 SkillHub — 团队共享</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: center
+---
+
+<div class="section-title text-center">
+  <div style="font-size:3rem;margin-bottom:0.3rem;opacity:0.3">📋</div>
+  <h1 style="font-size:2rem">Rules 深度解析</h1>
+  <h2 style="font-size:1rem;color:#94a3b8;margin-top:0.3rem">AI 的「持久化规则」</h2>
+</div>
+
+---
+
+# Rules — 持久化规则
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(235,203,139,0.12),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
+  <h4 style="color:#ebcb8b">📋 Rules 是什么？</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">项目级/全局级的<strong>持久化规则</strong>，始终生效</p>
+  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li>放在 <code style="color:#88c0d0">.claude/rules/</code> 目录下</li>
+    <li>每次对话自动加载，无需手动触发</li>
+    <li>约束 Agent 的行为边界</li>
+  </ul>
+</div>
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(180,142,173,0.12),rgba(180,142,173,0.03));border:1px solid rgba(180,142,173,0.25)">
+  <h4 style="color:#b48ead">🧩 Rules vs Skills 区别</h4>
+  <div class="mt-3" style="font-size:0.85rem">
+    <div class="p-3 rounded" style="background:rgba(235,203,139,0.08)">
+      <strong style="color:#ebcb8b">Rules</strong> = 公司制度（自动遵守）
+      <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem">→ 不需要你提醒，Agent 自动遵循</p>
+    </div>
+    <div class="mt-2 p-3 rounded" style="background:rgba(180,142,173,0.08)">
+      <strong style="color:#b48ead">Skills</strong> = 工具箱（按需取用）
+      <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem">→ 需要你主动调用才会触发</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+
+# Rules 实用示例
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-4 rounded-lg" style="border:1px solid rgba(235,203,139,0.25)">
+  <h4 style="color:#ebcb8b">📝 常见 Rules 示例</h4>
+  <ul style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li><strong style="color:#ebcb8b">HUI 组件使用规范</strong> — 强制使用 HUI 而非 Element UI</li>
+    <li><strong style="color:#ebcb8b">代码风格规范</strong> — ESLint 规则、命名约定</li>
+    <li><strong style="color:#ebcb8b">Git 提交规范</strong> — commit message 格式</li>
+    <li><strong style="color:#ebcb8b">项目架构约束</strong> — 目录结构、模块划分</li>
+  </ul>
+</div>
+
+<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">🎯 现场演示</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">添加一条 Rule → 观察 Claude Code 行为变化</p>
+  <div class="mt-3 p-3 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#a3be8c">
+    Demo: 添加 "必须使用 HUI 组件" rule<br>
+    → 让 CC 生成表单 → 观察是否自动使用 el-* (HUI)
+  </div>
+</div>
+
+</div>
+
+<div class="mt-4 p-3 rounded-lg" style="background:linear-gradient(135deg,rgba(235,203,139,0.1),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
+  <strong style="color:#ebcb8b">💡 最佳实践：</strong>把团队编码规范写成 Rules，新人上手即遵守，无需口头提醒
+</div>
+
+---
+layout: center
+---
+
+<div class="section-title text-center">
+  <div style="font-size:3rem;margin-bottom:0.3rem;opacity:0.3">🧲</div>
+  <h1 style="font-size:2rem">Hooks 深度解析</h1>
+  <h2 style="font-size:1rem;color:#94a3b8;margin-top:0.3rem">AI 的「事件监听器」</h2>
+</div>
+
+---
+
+# Hooks — 事件触发机制
 
 > **Hooks = AI 的「事件监听器」**，在关键环节插入自动化逻辑
 
 <div class="grid grid-cols-2 gap-6 mt-6">
 
 <div class="p-4 rounded-lg" style="border:1px solid rgba(143,188,187,0.25)">
-  <h4 style="color:#8fbcbb">🪝 Hook 执行流程</h4>
+  <h4 style="color:#8fbcbb">🧲 Hook 执行流程</h4>
   <div class="mt-3">
     <pre style="font-size:0.8rem;background:rgba(0,0,0,0.3);padding:0.75rem;border-radius:8px;color:#94a3b8">
 用户请求 → pre-hook → AI 处理 → post-hook → 返回结果</pre>
@@ -677,14 +740,56 @@ layout: center
 
 ---
 
-# Sub-Agents 深度解析
+# Hooks 实战案例
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(143,188,187,0.12),rgba(143,188,187,0.03));border:1px solid rgba(143,188,187,0.25)">
+  <h4 style="color:#8fbcbb">✅ 案例：ESLint Hook</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">提交前自动 lint 检查，不合格则拦截</p>
+  <div class="mt-3 p-3 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#8fbcbb">
+    配置 pre-commit hook<br>
+    → CC 写完代码 → 自动 eslint → 不通过则提示修复
+  </div>
+  <div class="mt-2 p-2 rounded" style="background:rgba(143,188,187,0.08);font-size:0.75rem;color:#8fbcbb">
+    效果：代码质量自动保障，无需人工检查
+  </div>
+</div>
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(208,135,112,0.12),rgba(208,135,112,0.03));border:1px solid rgba(208,135,112,0.25)">
+  <h4 style="color:#d08770">✅ 案例：跑马灯 Hook</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">有趣的自动化演示</p>
+  <div class="mt-3 p-3 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#d08770">
+    现场演示：配置一个 hook<br>
+    → 触发 → 看效果
+  </div>
+  <div class="mt-2 p-2 rounded" style="background:rgba(208,135,112,0.08);font-size:0.75rem;color:#d08770">
+    感受 Hooks 的自动化能力
+  </div>
+</div>
+
+</div>
+
+---
+layout: center
+---
+
+<div class="section-title text-center">
+  <div style="font-size:3rem;margin-bottom:0.3rem;opacity:0.3">👥</div>
+  <h1 style="font-size:2rem">高级使用</h1>
+  <h2 style="font-size:1rem;color:#94a3b8;margin-top:0.3rem">Sub-Agents · Workflows · Memory</h2>
+</div>
+
+---
+
+# Sub-Agents — 团队分工
 
 > **Sub-Agents = AI 的「团队分工」**，复杂任务拆解并行执行
 
 <div class="grid grid-cols-2 gap-6 mt-6">
 
-<div class="p-4 rounded-lg" style="border:1px solid rgba(235,203,139,0.25)">
-  <h4 style="color:#ebcb8b">👥 多 Agent 协作模式</h4>
+<div class="p-4 rounded-lg" style="border:1px solid rgba(208,135,112,0.25)">
+  <h4 style="color:#d08770">👥 多 Agent 协作模式</h4>
   <div class="mt-3 p-3 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#94a3b8">
 <pre>
 主 Agent（架构师）
@@ -700,16 +805,84 @@ layout: center
   </div>
 </div>
 
-<div class="p-4 rounded-lg" style="border:1px solid rgba(235,203,139,0.25)">
-  <h4 style="color:#ebcb8b">🎯 什么时候用？</h4>
+<div class="p-4 rounded-lg" style="border:1px solid rgba(208,135,112,0.25)">
+  <h4 style="color:#d08770">🎯 什么时候用？</h4>
   <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
     <li>📐 <strong>大型重构</strong> — 不同模块并发处理</li>
     <li>🔍 <strong>多维度审查</strong> — 安全 + 性能 + 样式同时审查</li>
     <li>🏗️ <strong>全栈开发</strong> — 前端后端测试三条线并行</li>
     <li>📊 <strong>批量任务</strong> — 多个独立任务同时处理</li>
   </ul>
-  <div class="mt-4 p-3 rounded" style="background:rgba(235,203,139,0.06);font-size:0.8rem;color:#ebcb8b">
-    <strong>效果：</strong>原本需要 10 步串行的任务，拆成 4 个并行 → 耗时减少 60%
+  <div class="mt-4 p-3 rounded" style="background:rgba(208,135,112,0.06);font-size:0.8rem;color:#d08770">
+    <strong>效果：</strong>串行 10 步 → 并行 4 路，耗时减少 60%
+  </div>
+</div>
+
+</div>
+
+---
+
+# Workflows — 企业 SOP 流程落地
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.12),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
+  <h4 style="color:#88c0d0">🔄 Workflow 是什么？</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">将团队 SOP（标准操作流程）固化为自动化 Workflow</p>
+  <div class="mt-3 p-3 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#88c0d0">
+    需求 → 开发 → 测试 → Review → 合并
+  </div>
+  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">与 Hooks + Skills 组合使用，构建完整流水线</p>
+</div>
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">🎯 实际案例</h4>
+  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li><strong style="color:#a3be8c">Code Review 流程</strong></li>
+    <li style="margin-left:1rem;color:#64748b">→ 提交代码 → 自动 review → 生成报告</li>
+    <li><strong style="color:#a3be8c">发布流程</strong></li>
+    <li style="margin-left:1rem;color:#64748b">→ 打包 → 测试 → 部署 → 通知</li>
+    <li><strong style="color:#a3be8c">新人入职流程</strong></li>
+    <li style="margin-left:1rem;color:#64748b">→ 环境配置 → 项目熟悉 → 首个任务</li>
+  </ul>
+</div>
+
+</div>
+
+---
+
+# Memory — 持久化记忆系统
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(180,142,173,0.12),rgba(180,142,173,0.03));border:1px solid rgba(180,142,173,0.25)">
+  <h4 style="color:#b48ead">🧠 Memory 是什么？</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">Claude Code 的持久化记忆能力</p>
+  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li>跨对话记忆 — 下次对话还记得</li>
+    <li>项目级记忆 — 针对当前项目</li>
+    <li>用户级记忆 — 个人偏好和习惯</li>
+  </ul>
+  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#b48ead">
+    让 Agent 越用越懂你
+  </div>
+</div>
+
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">🎯 Memory 类型</h4>
+  <div class="mt-3" style="font-size:0.85rem">
+    <div class="p-3 rounded" style="background:rgba(94,129,172,0.08)">
+      <strong style="color:#88c0d0">user</strong> — 用户角色、偏好、知识背景
+      <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem">→ 定制化回答风格</p>
+    </div>
+    <div class="mt-2 p-3 rounded" style="background:rgba(163,190,140,0.08)">
+      <strong style="color:#a3be8c">project</strong> — 项目目标、进度、决策
+      <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem">→ 理解项目上下文</p>
+    </div>
+    <div class="mt-2 p-3 rounded" style="background:rgba(180,142,173,0.08)">
+      <strong style="color:#b48ead">feedback</strong> — 纠正和验证的行为模式
+      <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem">→ 避免重复犯错</p>
+    </div>
   </div>
 </div>
 
@@ -720,151 +893,77 @@ layout: center
 ---
 
 <div class="section-title text-center">
-  <div style="font-size:4rem;margin-bottom:0.5rem;opacity:0.3">✦</div>
-  <h1>开发实操技巧</h1>
-  <h2>用好 AI 的「长板」，避开 AI 的「短板」</h2>
+  <div style="font-size:3rem;margin-bottom:0.3rem;opacity:0.3">🎯</div>
+  <h1 style="font-size:2rem">实操技巧总结</h1>
+  <h2 style="font-size:1rem;color:#94a3b8;margin-top:0.3rem">用好 AI 的「长板」，避开 AI 的「短板」</h2>
 </div>
 
 ---
 
-# AI 的短板：视觉稿还原
+# AI 的强项与短板
 
-<div class="grid grid-cols-2 gap-6 mt-6">
+<div class="grid grid-cols-3 gap-5 mt-6">
 
-<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(191,97,106,0.1),rgba(191,97,106,0.03));border:1px solid rgba(191,97,106,0.25)">
-  <h4 style="color:#bf616a">🎨 视觉稿 → 代码</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">AI 目前最大的弱项之一</p>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8">
-    <li>❌ 像素级还原困难</li>
-    <li>❌ 多图层动效理解差</li>
-    <li>❌ 设计规范难保持</li>
-    <li>❌ 交互逻辑理解有限</li>
+<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.12),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c;font-size:0.9rem">✅ 强项：逻辑功能</h4>
+  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-1">
+    <li>确定方案 → 直接告知执行</li>
+    <li>不确定 → 分两轮完成</li>
+    <li style="color:#64748b;font-size:0.75rem">① 推荐方案 ② 选定执行</li>
   </ul>
+  <div class="mt-2 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.7rem;font-family:monospace;color:#a3be8c">
+    "用 react-virtualized 改表格"
+  </div>
 </div>
 
-<div class="p-5 rounded-lg" style="border:1px solid rgba(100,116,139,0.25)">
-  <h4 style="color:#94a3b8">🔍 现有方案对比</h4>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
-    <li><strong style="color:#cbd5e1">MaaS 应用</strong> — 简单截图生成代码，但精度有限</li>
-    <li><strong style="color:#cbd5e1">Pixso</strong> — Figma 替代品，设计稿转代码（Dev Mode）</li>
-    <li><strong style="color:#cbd5e1">视觉大模型</strong> — GPT-4V 等理解 UI，但细节丢失</li>
-    <li><strong style="color:#cbd5e1">专门工具</strong> — Workbuddy、马维斯等</li>
+<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(191,97,106,0.12),rgba(191,97,106,0.03));border:1px solid rgba(191,97,106,0.25)">
+  <h4 style="color:#bf616a;font-size:0.9rem">❌ 短板：视觉还原</h4>
+  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-1">
+    <li>像素级还原困难</li>
+    <li>设计规范难保持</li>
   </ul>
+  <div class="mt-2 p-2 rounded" style="background:rgba(163,190,140,0.08);font-size:0.7rem;color:#a3be8c">
+    💡 拆分策略：功能逻辑 vs UI 开发
+  </div>
 </div>
 
-</div>
-
-<div class="mt-4 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(235,203,139,0.1),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
-  <h4 style="color:#ebcb8b">💡 当前最优实践</h4>
-  <p style="font-size:0.85rem;margin-top:0.3rem">截图 + 结构描述 + 组件化拆分 → AI 辅助生成<strong>组件骨架</strong>，人工微调样式细节</p>
-</div>
-
----
-
-# AI 的短板：内部 API 集成
-
-<div class="grid grid-cols-2 gap-6 mt-6">
-
-<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(191,97,106,0.1),rgba(191,97,106,0.03));border:1px solid rgba(191,97,106,0.25)">
-  <h4 style="color:#bf616a">为什么难？</h4>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
-    <li>🔒 公司内网，AI 模型不可达</li>
-    <li>📚 内部 API 文档不为 AI 所知</li>
-    <li>🔐 需要认证鉴权</li>
-    <li>🔄 调用链路复杂</li>
+<div class="p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(191,97,106,0.12),rgba(191,97,106,0.03));border:1px solid rgba(191,97,106,0.25)">
+  <h4 style="color:#bf616a;font-size:0.9rem">❌ 短板：内部 API</h4>
+  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-1">
+    <li>内网不可达</li>
+    <li>文档不为 AI 所知</li>
   </ul>
-</div>
-
-<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
-  <h4 style="color:#a3be8c">✅ 解决方案：Skill 封装</h4>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
-    <li>写一个 <strong>API Skill</strong>，封装调用逻辑</li>
-    <li>定义清晰的输入输出 Schema</li>
-    <li>配置鉴权方式</li>
-    <li>注册为 Agent 可用工具</li>
-  </ul>
-  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#94a3b8">
-    → "帮我调一下 HUI 系统的用户数据"<br>
-    → Agent 自动使用 Skill 完成调用
+  <div class="mt-2 p-2 rounded" style="background:rgba(163,190,140,0.08);font-size:0.7rem;color:#a3be8c">
+    💡 Skill 封装：调用逻辑 + Schema + 鉴权
   </div>
 </div>
 
 </div>
 
----
-
-# AI 的强项：逻辑性功能
-
-<div class="grid grid-cols-2 gap-6 mt-6">
-
-<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
-  <h4 style="color:#a3be8c">📌 场景 A：确定方案</h4>
-  <p style="font-size:0.85rem;margin-top:0.3rem;font-weight:bold;color:#d8dee9">直接告知 AI 执行即可</p>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
-    <li>✅ "用 ref 实现..."、"写一个..."、"改成..."</li>
-    <li>✅ 前端已确定的技术选型</li>
-    <li>✅ 有明确规范的标准操作</li>
-    <li>✅ 已有类似代码可参考</li>
-  </ul>
-  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#a3be8c">
-    → "把这个表格改成虚拟滚动，用 react-virtualized"
-  </div>
-</div>
-
-<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.1),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
-  <h4 style="color:#81a1c1">📌 场景 B：不确定方案</h4>
-  <p style="font-size:0.85rem;margin-top:0.3rem;font-weight:bold;color:#d8dee9">分两轮完成 🎯</p>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
-    <li><strong>第 1 轮：</strong>描述问题，让 AI 推荐实现方案</li>
-    <li style="margin-left:1rem;color:#64748b">→ 评估各方案的优缺点</li>
-    <li><strong>第 2 轮：</strong>选定方案，让 AI 执行</li>
-    <li style="margin-left:1rem;color:#64748b">→ 带着明确指令干活</li>
-  </ul>
-  <div class="mt-3 p-2 rounded" style="background:rgba(0,0,0,0.3);font-size:0.75rem;font-family:monospace;color:#81a1c1">
-    → "我想实现一个实时协作编辑功能，有什么方案？"<br>
-    → "选 OT 方案，帮我实现基础框架"
-  </div>
-</div>
-
+<div class="mt-4 p-3 rounded-lg text-center" style="background:linear-gradient(135deg,rgba(235,203,139,0.1),rgba(235,203,139,0.03));border:1px solid rgba(235,203,139,0.25)">
+  <strong style="color:#ebcb8b">核心策略：</strong>扬长避短 · 场景决定用法 · 拆分任务降低复杂度
 </div>
 
 ---
 
-# 多角色协作模式
+# 课后任务
 
-参考：<a href="https://github.com/msitarzewski/agency-agents" target="_blank" style="color:#81a1c1">agency-agents</a>
-
-<div class="grid grid-cols-3 gap-6 mt-6">
-
-<div class="p-4 rounded-lg text-center" style="border:1px solid rgba(94,129,172,0.3)">
-  <div style="font-size:2.5rem;margin-bottom:0.25rem">🧑‍💼</div>
-  <h4 style="color:#81a1c1">PM Agent</h4>
-  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">需求分析<br>任务拆分<br>验收标准</p>
-</div>
-
-<div class="p-4 rounded-lg text-center" style="border:1px solid rgba(163,190,140,0.3)">
-  <div style="font-size:2.5rem;margin-bottom:0.25rem">👨‍💻</div>
-  <h4 style="color:#a3be8c">Dev Agent</h4>
-  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">编码实现<br>单元测试<br>Code Review</p>
-</div>
-
-<div class="p-4 rounded-lg text-center" style="border:1px solid rgba(180,142,173,0.3)">
-  <div style="font-size:2.5rem;margin-bottom:0.25rem">🧪</div>
-  <h4 style="color:#b48ead">QA Agent</h4>
-  <p style="font-size:0.8rem;margin-top:0.3rem;color:#94a3b8">测试用例<br>E2E 测试<br>回归验证</p>
-</div>
-
-</div>
-
-<div class="mt-8 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.08),rgba(180,142,173,0.08),rgba(163,190,140,0.08));border:1px solid rgba(100,116,139,0.25)">
-  <h4 style="color:#d8dee9">🔥 工作流示例：</h4>
-  <ol style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8" class="space-y-1">
-    <li>1. PM Agent 将需求拆成可执行的 Task</li>
-    <li>2. Dev Agent 领取 Task 进行编码</li>
-    <li>3. 提交后自动触发 QA Agent 测试</li>
-    <li>4. 测试通过 → 通知人类 Review</li>
-    <li>5. Review 通过 → 自动合并</li>
-  </ol>
+<div class="mt-8 p-6 rounded-xl text-center" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(94,129,172,0.08));border:1px solid rgba(100,116,139,0.25)">
+  <h3 style="color:#d8dee9;font-size:1.3rem">📝 每人制作一个 Skill，发布到部门 SkillHub</h3>
+  <div class="mt-4 grid grid-cols-3 gap-4" style="font-size:0.85rem">
+    <div class="p-3 rounded" style="background:rgba(180,142,173,0.08)">
+      <strong style="color:#b48ead">方向一</strong>
+      <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem">团队常用编码模式</p>
+    </div>
+    <div class="p-3 rounded" style="background:rgba(235,203,139,0.08)">
+      <strong style="color:#ebcb8b">方向二</strong>
+      <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem">项目规范封装</p>
+    </div>
+    <div class="p-3 rounded" style="background:rgba(163,190,140,0.08)">
+      <strong style="color:#a3be8c">方向三</strong>
+      <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem">内部 API 封装</p>
+    </div>
+  </div>
 </div>
 
 ---
@@ -873,48 +972,42 @@ layout: center
 
 <div class="section-title text-center">
   <div style="font-size:4rem;margin-bottom:0.5rem;opacity:0.3">✦</div>
-  <h1>AI 视觉生成能力</h1>
-</div>
+  <h1 style="font-size:2.5rem">Part 3</h1>
+  <h2 style="font-size:1.3rem;color:#94a3b8;margin-top:0.3rem">Q&A</h2>
+  </div>
 
 ---
 
-# AI 视觉生成工作流
+# Q&A
 
-<div class="grid grid-cols-2 gap-6 mt-6">
+<div class="grid grid-cols-2 gap-6 mt-8">
 
-<div class="p-5 rounded-lg" style="border:1px solid rgba(180,142,173,0.3)">
-  <h4 style="color:#b48ead">1️⃣ 需求生成示意图</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem">用 AI 快速生成产品示意图、流程图</p>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-1">
-    <li>📊 架构图 → Mermaid / Excalidraw</li>
-    <li>🖼️ 组件示意图 → AI 生成 SVG</li>
-    <li>📋 用户流程图 → 自动绘制</li>
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(94,129,172,0.12),rgba(94,129,172,0.03));border:1px solid rgba(94,129,172,0.25)">
+  <h4 style="color:#88c0d0">💬 问题答疑</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">关于 Claude Code、Skills、Hooks、Rules 的任何问题</p>
+  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-2">
+    <li>安装配置问题</li>
+    <li>使用场景讨论</li>
+    <li>与其他工具对比</li>
+    <li>团队落地方案</li>
   </ul>
 </div>
 
-<div class="p-5 rounded-lg" style="border:1px solid rgba(180,142,173,0.3)">
-  <h4 style="color:#b48ead">2️⃣ 视觉稿（图片）还原</h4>
-  <p style="font-size:0.85rem;margin-top:0.5rem">从设计图到代码的工具链</p>
-  <ul style="font-size:0.8rem;margin-top:0.5rem;color:#94a3b8" class="space-y-1">
-    <li>🤖 <strong>视觉大模型</strong> — GPT-4V / Claude Vision</li>
-    <li>🎨 <strong>Figma 插件</strong> — Pixso Dev Mode</li>
-    <li>🔧 <strong>Workbuddy</strong> — 设计稿转代码</li>
-    <li>📐 <strong>马维斯</strong> — 设计规范检查</li>
-  </ul>
-</div>
-
-</div>
-
-<div class="mt-6 p-4 rounded-lg" style="background:linear-gradient(135deg,rgba(100,116,139,0.1),rgba(100,116,139,0.03));border:1px solid rgba(100,116,139,0.25)">
-  <h4 style="color:#94a3b8">现实 vs 期望</h4>
-  <div class="grid grid-cols-2 gap-4 mt-2" style="font-size:0.8rem">
-    <div class="p-2 rounded" style="background:rgba(191,97,106,0.06)">
-      <strong style="color:#bf616a">现实：</strong>AI 很难做到像素级还原
-    </div>
-    <div class="p-2 rounded" style="background:rgba(163,190,140,0.06)">
-      <strong style="color:#a3be8c">期望：</strong>未来 AI 直接看图生成完整前端
-    </div>
+<div class="p-5 rounded-lg" style="background:linear-gradient(135deg,rgba(163,190,140,0.12),rgba(163,190,140,0.03));border:1px solid rgba(163,190,140,0.25)">
+  <h4 style="color:#a3be8c">📊 使用经验分享</h4>
+  <p style="font-size:0.85rem;margin-top:0.5rem;color:#94a3b8">每人分享自己的使用体验：</p>
+  <div class="mt-3 p-3 rounded" style="background:rgba(0,0,0,0.2);font-size:0.85rem">
+    <ul style="color:#94a3b8" class="space-y-2">
+      <li>✦ 打分 0-10</li>
+      <li>✦ 用的什么模型</li>
+      <li>✦ 使用技巧</li>
+    </ul>
   </div>
+  <div class="mt-3 p-2 rounded" style="background:rgba(235,203,139,0.08);font-size:0.8rem;color:#ebcb8b">
+    💡 我的技巧：视觉还原 → 拆分任务（功能逻辑 vs UI）
+  </div>
+</div>
+
 </div>
 
 ---
@@ -922,72 +1015,18 @@ layout: center
 class: text-center
 ---
 
-# 总结
-
-<div class="grid grid-cols-3 gap-6 mt-8">
-
-<div>
-  <div style="font-size:4rem;margin-bottom:0.5rem">🦐</div>
-  <h4 style="color:#d8dee9">OpenClaw</h4>
-  <p style="font-size:0.85rem;color:#94a3b8;margin-top:0.3rem">你的 AI 操作系统<br>多平台 + 自动化</p>
-</div>
-
-<div>
-  <div style="font-size:4rem;margin-bottom:0.5rem">⚡</div>
-  <h4 style="color:#d8dee9">AI Agent</h4>
-  <p style="font-size:0.85rem;color:#94a3b8;margin-top:0.3rem">编程提效<br>Claude Code + Cursor</p>
-</div>
-
-<div>
-  <div style="font-size:4rem;margin-bottom:0.5rem">🎯</div>
-  <h4 style="color:#d8dee9">最佳实践</h4>
-  <p style="font-size:0.85rem;color:#94a3b8;margin-top:0.3rem">扬长避短<br>场景决定用法</p>
-</div>
-
-</div>
-
-<div class="mt-10 p-5 rounded-xl" style="background:linear-gradient(135deg,rgba(163,190,140,0.1),rgba(94,129,172,0.08));border:1px solid rgba(100,116,139,0.25)">
-  <h3 style="color:#d8dee9;text-align:left">🚀 立刻行动</h3>
-  <div class="grid grid-cols-2 gap-4 mt-3" style="font-size:0.85rem">
-    <div>
-      <p><strong style="color:#a3be8c">今天就能做：</strong></p>
-      <ul style="font-size:0.8rem;color:#94a3b8;margin-top:0.3rem" class="space-y-1">
-        <li>1️⃣ 安装 OpenClaw（5 分钟）</li>
-        <li>2️⃣ 接入 QQ / Discord</li>
-        <li>3️⃣ 体验 Agent 能力</li>
-        <li>4️⃣ 写第一个 Skill</li>
-      </ul>
-    </div>
-    <div>
-      <p><strong style="color:#81a1c1">未来可探索：</strong></p>
-      <ul style="font-size:0.8rem;color:#94a3b8;margin-top:0.3rem" class="space-y-1">
-        <li>🔮 多 Agent 协作流水线</li>
-        <li>🔮 定时自动化任务</li>
-        <li>🔮 团队知识库集成</li>
-        <li>🔮 接入私有 MCP 服务</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
----
-layout: center
-class: text-center
----
-
-<h1 style="font-size:3rem">谢谢聆听 🦐</h1>
-<p style="font-size:1.2rem;color:#94a3b8;margin-top:0.5rem">欢迎交流 & 一起探索</p>
+<h1 style="font-size:3rem">参考文档</h1>
 
 <br><br>
 
 <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap">
   <a href="https://docs.openclaw.ai" target="_blank" style="color:#81a1c1;font-size:0.9rem">📖 OpenClaw 文档</a>
   <a href="https://github.com/openclaw/openclaw" target="_blank" style="color:#81a1c1;font-size:0.9rem">⭐ GitHub</a>
-  <a href="https://github.com/msitarzewski/agency-agents" target="_blank" style="color:#81a1c1;font-size:0.9rem">👥 Agency Agents</a>
+  <a href="https://www.skillhub.club/" target="_blank" style="color:#81a1c1;font-size:0.9rem">🧩 SkillHub</a>
 </div>
 
 ---
 layout: end
 ---
 
-# Q&A
+# Thanks
